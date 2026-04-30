@@ -1,3 +1,102 @@
+# 🏥 Sistema de Gestión para Asilo  
+## Plataforma Integral para el Cuidado de Adultos Mayores
+
+Sistema web desarrollado en **Laravel** para la administración, monitoreo y control de adultos mayores dentro de un asilo o casa de retiro, facilitando la gestión médica, administrativa y social.
+
+---
+
+## 📌 Descripción
+
+Este sistema permite centralizar toda la información de los residentes de un asilo, incluyendo datos personales, historial médico, tratamientos, actividades y seguimiento diario.
+
+Está diseñado para mejorar la atención, optimizar procesos internos y brindar un mejor control por parte del personal médico y administrativo.
+
+---
+
+## 🎯 Objetivo
+
+- 👴 Mejorar la calidad de vida de los residentes  
+- 🩺 Facilitar el seguimiento médico  
+- 📊 Centralizar información del asilo  
+- ⚠️ Detectar situaciones de riesgo  
+- 🤝 Mejorar la comunicación entre personal y familiares  
+
+---
+
+## 🚀 Funcionalidades principales
+
+### 👤 Gestión de residentes
+- Registro de adultos mayores  
+- Historial clínico  
+- Información personal y médica  
+
+### 🩺 Control médico
+- Registro de diagnósticos  
+- Seguimiento de tratamientos  
+- Control de signos vitales  
+
+### 💊 Gestión de medicamentos
+- Programación de dosis  
+- Recordatorios  
+- Control de administración  
+
+### 📊 Panel administrativo
+- Dashboard con indicadores  
+- Reportes y estadísticas  
+- Control general del sistema  
+
+### 📅 Actividades y eventos
+- Registro de actividades diarias  
+- Programación de eventos  
+- Seguimiento de participación  
+
+### ⚠️ Alertas
+- Notificaciones ante emergencias  
+- Avisos de medicamentos  
+- Indicadores de riesgo  
+
+### 👨‍⚕️ Gestión de usuarios
+- Roles: administrador, médico, cuidador  
+- Control de accesos  
+
+---
+
+## 🧠 Enfoque del sistema
+
+El sistema está basado en un enfoque integral:
+
+- 🩺 Salud física  
+- 🧠 Bienestar emocional  
+- 🤝 Entorno social  
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+- **Backend:** Laravel (PHP)  
+- **Frontend:** Blade, HTML, CSS, JavaScript  
+- **Base de datos:** MySQL  
+- **Servidor:** Apache / Nginx  
+
+---
+
+## ⚙️ Requisitos
+
+- PHP 8.x  
+- Composer  
+- MySQL  
+- Node.js y npm  
+
+---
+
+## 🔧 Instalación
+
+1. Clonar el repositorio:
+
+```bash
+git clone https://github.com/isairey/SysAsiloLaravel.git
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
