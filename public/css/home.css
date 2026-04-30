@@ -1,0 +1,47 @@
+.dashboard-header {
+    color: white;
+    padding: 30px;
+    background-image: url('../img/cam.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+.dashboard-section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    margin: 30px auto;
+    width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    animation: transitionIn-Y-bottom 0.5s;
+}
+
+
+.stat-box {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #e3f2fd;
+    text-align: center;
+    color: #0A76D8;
+    margin: 10px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.stat-title {
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.stat-number {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

@@ -1,0 +1,456 @@
+/* public/css/Medico/verDetallesKine.css */
+
+/* Paleta de colores consistente con otros archivos */
+:root {
+    --color-primary: #9B2C2C;
+    --color-secondary: #FFB500;
+    --color-accent: #E53E3E;
+    --color-light: #F8F9FA;
+    --color-gray: #6C757D;
+    --color-dark: #343A40;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 8px 15px rgba(0,0,0,0.1);
+
+    /* Variables específicas de acordeón Bootstrap, para personalización */
+    --bs-accordion-border-color: var(--border-color);
+    --bs-accordion-border-radius: 10px;
+    --bs-accordion-inner-border-radius: 10px;
+    --bs-accordion-active-bg: rgba(155, 44, 44, 0.1); /* light version of primary */
+    --bs-accordion-btn-color: var(--color-dark);
+    --bs-accordion-btn-active-color: var(--color-primary);
+
+    /* Adaptación de colores para consistencia en la empresa */
+    --empresa-primary: var(--color-primary); /* #9B2C2C */
+    --empresa-primary-light: rgba(155, 44, 44, 0.1); /* rgba(var(--color-primary), 0.1) */
+    --empresa-secondary: var(--color-secondary); /* #FFB500 */
+    --empresa-secondary-light: rgba(255, 181, 0, 0.1); /* rgba(var(--color-secondary), 0.1) */
+    --empresa-accent: var(--color-accent); /* #E53E3E */
+    --empresa-accent-light: rgba(229, 62, 62, 0.1);
+    --text-primary: var(--color-dark);
+    --text-secondary: var(--color-gray);
+    --border-color: #e2e8f0;
+    --background-light: var(--color-light);
+    --background-white: #ffffff;
+    --color-success: #28a745; /* Verde estándar para éxito */
+}
+
+/* Estilos generales para el cuerpo (fondo general) */
+body {
+    background: linear-gradient(135deg, var(--color-light) 0%, #e9ecef 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para el título principal de la página */
+.page-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(155, 44, 44, 0.3);
+}
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 1.2rem;
+        padding: 12px 15px;
+    }
+}
+
+/* Estructura principal */
+.enfermeria-header {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Tarjeta principal */
+.enfermeria-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.enfermeria-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-header.bg-empresa-primary {
+    background: linear-gradient(135deg, var(--empresa-primary), var(--empresa-accent)) !important;
+    padding: 20px 25px;
+    border-bottom: none;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: white;
+}
+
+.badge.bg-empresa-secondary {
+    background-color: var(--empresa-secondary) !important;
+    color: var(--text-primary) !important;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Contenedor de detalles */
+.enfermeria-detail-container {
+    display: block;
+    padding: 20px 0;
+}
+
+/* Acordeones */
+.accordion {
+    --bs-accordion-border-color: var(--border-color);
+    --bs-accordion-border-radius: 10px;
+    --bs-accordion-inner-border-radius: 10px;
+    --bs-accordion-active-bg: var(--empresa-primary-light);
+    --bs-accordion-btn-color: var(--color-dark);
+    --bs-accordion-btn-active-color: var(--color-primary);
+}
+
+.accordion-item {
+    border: none;
+    margin-bottom: 20px;
+}
+
+.accordion-header {
+    margin-bottom: 0;
+}
+
+.accordion-button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 25px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    background-color: var(--background-white);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--color-primary);
+    color: var(--color-dark);
+    text-align: left;
+    position: relative;
+    box-shadow: var(--shadow-sm);
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--bs-accordion-active-bg);
+    color: var(--bs-accordion-btn-active-color);
+    box-shadow: none;
+    border-color: var(--color-primary);
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(155, 44, 44, 0.25);
+    outline: 0;
+}
+
+.accordion-button .section-icon {
+    margin-right: 15px;
+    flex-shrink: 0;
+    background-color: rgba(155, 44, 44, 0.1);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    font-size: 1.2rem;
+}
+
+.accordion-button .section-title {
+    flex-grow: 1;
+    margin: 0;
+    color: inherit;
+}
+
+.accordion-button::after {
+    display: none;
+}
+
+.accordion-icon {
+    margin-left: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.accordion-button:not(.collapsed) .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.accordion-collapse {
+    border-top: none;
+}
+
+.accordion-body {
+    padding: 20px 25px 0 25px;
+    background-color: var(--background-white);
+    border-radius: 0 0 10px 10px;
+}
+
+.detail-section {
+    background-color: var(--background-white);
+    border-radius: 10px;
+    box-shadow: var(--shadow-light); /* Assuming --shadow-light and --shadow-medium are defined or fall back */
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.detail-section:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md); /* Using --shadow-md for consistency */
+}
+
+.detail-group {
+    background-color: var(--background-light);
+    border-radius: 8px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.detail-group:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.detail-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.detail-label {
+    flex: 0 0 30%;
+    font-weight: bold;
+    color: var(--color-primary);
+    padding-right: 15px;
+    word-break: break-word;
+}
+
+.detail-value {
+    flex: 1;
+    color: var(--color-dark);
+    word-break: break-word;
+}
+
+/* Estilos específicos para los badges (servicios y turnos) */
+.detail-value .badge {
+    font-size: 0.85em;
+    font-weight: 600;
+    padding: 0.4em 0.8em;
+    border-radius: 0.25rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25em;
+    margin-bottom: 0.25rem;
+}
+
+.detail-value .badge.bg-primary {
+    background-color: var(--color-primary) !important;
+    color: #fff !important;
+}
+
+.detail-value .badge.bg-info {
+    background-color: #17a2b8 !important; /* Bootstrap default info color, or adjust to a suitable blue from palette if available */
+    color: #fff !important;
+}
+
+.detail-value .text-muted {
+    font-style: italic;
+    color: var(--color-gray) !important;
+}
+
+
+/* Botones de acción (manteniendo la consistencia de los estilos de botones de fisioterapia) */
+.enfermeria-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.export-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-empresa-secondary { /* Botón "Volver al listado" */
+    background: var(--empresa-secondary);
+    border: none;
+    color: var(--text-primary);
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.btn-empresa-secondary:hover {
+    background-color: #e6a700;
+    color: var(--text-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-empresa-primary { /* Botón de "Imprimir" (no está en Kine pero el estilo se mantiene) */
+    background: linear-gradient(135deg, var(--empresa-primary), var(--empresa-accent));
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.btn-empresa-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(155, 44, 44, 0.3);
+    color: white;
+}
+
+.btn-empresa-accent { /* Botón de "Exportar PDF" (no está en Kine pero el estilo se mantiene) */
+    background: linear-gradient(135deg, var(--empresa-secondary), #FF8C00);
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.btn-empresa-accent:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 181, 0, 0.3);
+    color: white;
+}
+
+/* Nuevos estilos para botones específicos de Kinesiología */
+.btn-empresa-warning { /* Botón "Editar Ficha" */
+    background: var(--color-secondary);
+    border: none;
+    color: var(--text-primary); /* Texto oscuro para contraste en amarillo */
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.btn-empresa-warning:hover {
+    background-color: #e6a700; /* Un poco más oscuro para el hover */
+    color: var(--text-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-empresa-success { /* Botón "Exportar Excel" */
+    background-color: var(--color-success); /* Usando la variable definida */
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.btn-empresa-success:hover {
+    background-color: #218838; /* Tono más oscuro de verde */
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-empresa-danger { /* Botón "Eliminar Ficha" */
+    background: var(--color-accent);
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.btn-empresa-danger:hover {
+    background-color: #c82333; /* Tono más oscuro de acento */
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .detail-label {
+        flex: 0 0 100%;
+        margin-bottom: 5px;
+        padding-right: 0;
+    }
+    .detail-value {
+        flex: 0 0 100%;
+    }
+    .enfermeria-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .export-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    .btn-empresa-warning, .btn-empresa-success, .btn-empresa-danger, .btn-empresa-secondary {
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,226 @@
+/* public/css/Proteccion/tabs/intervencion.css */
+
+/* Estilos generales para el formulario de intervención */
+.tab-pane.active {
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Aplicar estilos específicos cuando el tab de intervención esté activo */
+.tab-pane#intervencion.active {
+    display: block;
+}
+
+/* Estilos para el título principal */
+    #intervencion h4 {
+        grid-column: 1 / -1; /* Ocupa todo el ancho en el grid */
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 20px;
+        padding: 15px 20px;
+        background: linear-gradient(135deg, #9b2c2c, #e53e3e);
+        color: white;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(155, 44, 44, 0.3);
+    }
+    #intervencion h4 {
+    font-size: 1.2rem;
+    padding: 12px 15px;
+    }
+
+/* Estilos para cada grupo de campos (.mb-3) */
+#intervencion .mb-3 {
+    margin-bottom: 25px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Estilos para las etiquetas (labels) */
+#intervencion label {
+    font-weight: 600;
+    color: #4a5568;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+/* Estilos para los campos de entrada */
+#intervencion input[type="text"],
+#intervencion input[type="date"],
+#intervencion textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #2d3748;
+    background-color: #f7fafc;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* Estados de focus para los campos */
+#intervencion input:focus,
+#intervencion textarea:focus {
+    border-color: #9b2c2c;
+    box-shadow: 0 0 0 3px rgba(155, 44, 44, 0.2);
+    outline: none;
+    background-color: #ffffff;
+}
+
+/* Estilos específicos para textareas */
+#intervencion textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Estilos para placeholders */
+#intervencion input::placeholder {
+    color: #a0aec0;
+    font-style: italic;
+}
+
+/* Sección especial para "Derivaciones y Resultados" */
+#intervencion .mb-3:has(label:contains("Derivaciones y Resultados")) {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Alternativa más compatible para la sección de derivaciones */
+#intervencion .mb-3:nth-child(4) {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilos para inputs dentro de la sección de derivaciones */
+#intervencion .mb-3:nth-child(4) input[type="text"] {
+    margin-bottom: 15px;
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+}
+
+#intervencion .mb-3:nth-child(4) input[type="text"]:last-child {
+    margin-bottom: 0;
+}
+
+/* Contenedor de navegación con clase Bootstrap */
+#intervencion .d-flex.justify-content-between {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center;
+    padding-top: 25px;
+    border-top: 1px solid #edf2f7;
+    gap: 15px;
+    margin-top: 30px !important;
+}
+
+/* Estilos para botones de navegación */
+#intervencion button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón anterior */
+#intervencion button[onclick="backTab()"] {
+    background: linear-gradient(135deg, #718096, #a0aec0);
+    color: white;
+}
+
+#intervencion button[onclick="backTab()"]:hover {
+    background: linear-gradient(135deg, #a0aec0, #718096);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Botón siguiente */
+#intervencion button[onclick="nextTab()"] {
+    background: linear-gradient(135deg, #9b2c2c, #e53e3e);
+    color: white;
+}
+
+#intervencion button[onclick="nextTab()"]:hover {
+    background: linear-gradient(135deg, #e53e3e, #9b2c2c);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos para el campo de fecha */
+#intervencion input[type="date"] {
+    position: relative;
+    cursor: pointer;
+}
+
+#intervencion input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .tab-pane#intervencion.active {
+        padding: 20px;
+    }
+
+    #intervencion .mb-3:nth-child(4) {
+        padding: 15px;
+    }
+
+    #intervencion .d-flex.justify-content-between {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    #intervencion button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .tab-pane#intervencion.active {
+        padding: 15px;
+    }
+
+    #intervencion .mb-3 {
+        margin-bottom: 20px !important;
+    }
+
+    #intervencion .mb-3:nth-child(4) {
+        padding: 12px;
+    }
+
+    #intervencion input,
+    #intervencion textarea {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+
+    #intervencion .d-flex.justify-content-between {
+        margin-top: 20px !important;
+        padding-top: 20px;
+    }
+}

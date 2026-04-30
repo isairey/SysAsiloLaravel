@@ -1,0 +1,237 @@
+/* Estilos para la vista de Gestión de Usuarios */
+
+/* Contenedor principal */
+.container {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Título de la página */
+.page-title {
+    font-size: 2.2em;
+    color: #343a40;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Contenedores de alertas (Bootstrap-like) */
+.alert {
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: fadeIn 0.5s ease-out; /* Animación simple */
+}
+
+.alert strong {
+    font-weight: 700;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-error { /* Usando colores similares a alert-danger de Bootstrap */
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+/* Estilos de la tabla */
+.table-container {
+    overflow-x: auto; /* Permite scroll horizontal en pantallas pequeñas */
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    padding: 15px;
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 0.95em;
+}
+
+.user-table th,
+.user-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+    vertical-align: middle;
+}
+
+.user-table thead th {
+    background-color: #e2e6ea;
+    color: #495057;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85em;
+}
+
+.user-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Badges de estado */
+.badge {
+    padding: 0.4em 0.8em;
+    border-radius: 0.25rem;
+    font-weight: 600;
+    font-size: 0.75em;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+}
+
+.badge-active {
+    background-color: #28a745; /* Verde */
+    color: #fff;
+}
+
+.badge-inactive {
+    background-color: #dc3545; /* Rojo */
+    color: #fff;
+}
+
+/* Botones de acción */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    margin-right: 5px; /* Espacio entre botones */
+    border: 1px solid transparent; /* Base para todos los botones */
+}
+
+.btn i {
+    margin-right: 5px; /* Espacio entre icono y texto */
+}
+
+.btn-edit {
+    background-color: #007bff; /* Azul */
+    color: #fff;
+    border-color: #007bff;
+}
+
+.btn-edit:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+.btn-toggle.btn-warning { /* Para Desactivar */
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #212529; /* Texto oscuro para contraste */
+}
+
+.btn-toggle.btn-warning:hover {
+    background-color: #e0a800;
+    border-color: #e0a800;
+    transform: translateY(-1px);
+}
+
+.btn-toggle.btn-success { /* Para Activar */
+    background-color: #28a745;
+    border-color: #28a745;
+    color: #fff;
+}
+
+.btn-toggle.btn-success:hover {
+    background-color: #218838;
+    border-color: #218838;
+    transform: translateY(-1px);
+}
+
+.btn-delete {
+    background-color: #dc3545; /* Rojo */
+    color: #fff;
+    border-color: #dc3545;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+    border-color: #c82333;
+    transform: translateY(-1px);
+}
+
+.form-inline {
+    display: inline-block; /* Para que los formularios de los botones estén en línea */
+    margin-right: 5px; /* Espacio entre formularios */
+}
+
+/* Botón de "Registrar Nuevo Responsable" */
+.btn-white {
+    background-color: #fff;
+    color: #007bff;
+    border: 1px solid #007bff;
+    padding: 10px 15px;
+    font-weight: 600;
+    margin-left: auto; /* Para alinearlo a la derecha en el card-header */
+}
+.btn-white:hover {
+    background-color: #e9ecef;
+    color: #0056b3;
+}
+
+/* Paginación */
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination nav {
+    display: flex;
+    gap: 5px;
+}
+
+.pagination nav .page-item .page-link {
+    border-radius: 5px;
+    padding: 8px 12px;
+    border: 1px solid #dee2e6;
+    color: #007bff;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.pagination nav .page-item .page-link:hover {
+    background-color: #e9ecef;
+}
+
+.pagination nav .page-item.active .page-link {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+}
+
+.pagination nav .page-item.disabled .page-link {
+    color: #6c757d;
+    cursor: not-allowed;
+    background-color: #e9ecef;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

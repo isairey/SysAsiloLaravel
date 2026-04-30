@@ -1,0 +1,334 @@
+/* RegistrarCaso.css - Estilos para el formulario de registro de casos */
+:root {
+    --color-primary: #9B2C2C;
+    --color-secondary: #FFB500;
+    --color-accent: #E53E3E;
+    --color-light: #F8F9FA;
+    --color-gray: #6C757D;
+    --color-dark: #343A40;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 8px 15px rgba(0,0,0,0.1);
+}
+/* Estilos para el título principal */
+    h6 {
+        grid-column: 1 / -1; /* Ocupa todo el ancho en el grid */
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 20px;
+        padding: 15px 20px;
+        background: linear-gradient(135deg, #9b2c2c, #e53e3e);
+        color: white;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(155, 44, 44, 0.3);
+    }
+    h6 {
+    font-size: 1.2rem;
+    padding: 12px 15px;
+    }
+body {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-left: 250px; /* Espacio para el sidebar */
+    transition: margin-left 0.3s ease;
+    padding: 20px;
+    /* Removido min-height: 100vh; que causaba el problema */
+    background: white;
+    border-radius: 15px 0 0 0;
+    box-shadow: var(--shadow-lg);
+    /* Agregado para mejor control del height */
+    min-height: auto;
+}
+
+/* Responsivo para cuando el sidebar se colapsa */
+@media (max-width: 768px) {
+    .container {
+        margin-left: 0;
+        border-radius: 0;
+    }
+}
+
+
+/* Mensajes de éxito y error */
+.success-message {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #155724;
+    box-shadow: var(--shadow-sm);
+}
+
+.error-message {
+    background: linear-gradient(135deg, var(--color-accent), #dc3545);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #721c24;
+    box-shadow: var(--shadow-sm);
+}
+
+.error-message ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+/* Estilos para tabs */
+ul#formTabs {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 5px;
+    padding: 0;
+    margin: 0 0 20px 0;
+    border-bottom: none;
+    background: var(--color-light);
+    border-radius: 12px;
+    padding: 8px;
+    box-shadow: var(--shadow-sm);
+}
+
+.tab-link {
+    padding: 12px 20px;
+    background: white;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--color-gray);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 0.9rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.tab-link:hover {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.tab-link.active {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    color: white;
+    font-weight: 600;
+    border-color: var(--color-secondary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.tab-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--color-secondary);
+    border-radius: 2px;
+}
+
+/* Contenido de tabs */
+.tab-content {
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    /* Agregado margin-bottom para separar del footer */
+    margin-bottom: 20px;
+}
+
+.tab-pane {
+    display: none;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    position: relative;
+}
+
+.tab-pane.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Formulario */
+form {
+    position: relative;
+    /* Removido cualquier height fijo que pueda interferir */
+}
+
+/* Botón de envío */
+button[type="submit"] {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+    margin-top: 20px;
+    /* Agregado margin-bottom para separar del footer */
+    margin-bottom: 20px;
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
+}
+
+/* Indicador de progreso */
+.progress-indicator {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--color-light);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-secondary), var(--color-primary));
+    border-radius: 2px;
+    transition: width 0.3s ease;
+    width: 11.11%; /* 1/9 tabs */
+}
+
+/* Estilos responsivos */
+@media (max-width: 1200px) {
+    .container {
+        margin-left: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin-left: 0;
+        padding: 15px;
+        border-radius: 0;
+    }
+
+    
+    ul#formTabs {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .tab-link {
+        text-align: center;
+        padding: 15px;
+    }
+    
+    .tab-pane {
+        padding: 20px;
+    }
+}
+
+/* Efectos adicionales */
+.tab-pane::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-secondary), var(--color-primary));
+    border-radius: 0 0 2px 2px;
+}
+
+/* Animación de carga */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.container {
+    animation: slideIn 0.5s ease-out;
+}
+/* Estilos básicos para mensajes de error de validación */
+        .error-message {
+            color: red;
+            font-size: 0.85em;
+            margin-top: 5px;
+            display: block; /* Asegura que cada error esté en su propia línea */
+        }
+        .is-invalid {
+            border-color: red !important; /* Resalta el input con error */
+        }
+        .general-error-container {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #ffebe6;
+            border: 1px solid red;
+            border-radius: 5px;
+        }
+        .navigation-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f8f8f8;
+            border-top: 1px solid #eee;
+        }
+        .navigation-buttons button,
+        .navigation-buttons a { /* Estilo para los links de Anterior también */
+            padding: 10px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            text-decoration: none; /* Quita el subrayado de los links */
+            display: inline-block; /* Para que los links se comporten como botones */
+            text-align: center;
+        }
+        .navigation-buttons button:hover,
+        .navigation-buttons a:hover {
+            opacity: 0.9;
+        }
+        .navigation-buttons button:first-child,
+        .navigation-buttons a:first-child {
+            background-color: #6c757d; /* Gris para "Anterior" */
+            color: white;
+        }
+        .navigation-buttons button:last-child {
+            background-color: #007bff; /* Azul para "Siguiente" o "Guardar" */
+            color: white;
+        }
+        .next-act{
+            padding-left: 80%;
+        }

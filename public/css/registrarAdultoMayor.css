@@ -1,0 +1,247 @@
+/* Estilos específicos para el formulario de Registro de Adulto Mayor */
+
+/* Contenedor principal del formulario */
+.register-adulto-mayor-container {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px; /* Ancho ajustado para que sea similar al de la imagen */
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilos de la tarjeta principal */
+.card {
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.card-header.bg-success {
+    background-color: #28a745 !important; /* Color verde para el encabezado */
+    color: #fff;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-title {
+    color: #fff;
+    margin-bottom: 0;
+    font-size: 1.25em;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+/* Títulos de sección dentro del formulario */
+h5.text-success {
+    font-size: 1.5em; /* Ajustado de h5 a un tamaño más visible */
+    font-weight: 600;
+    color: #28a745 !important;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 10px;
+}
+
+/* Estilos de etiquetas */
+.form-label {
+    font-weight: 600;
+    color: #495057;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Estilos de campos de entrada y select (Bootstrap por defecto) */
+.form-control,
+.form-select {
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Estilo para campos inválidos (aplicado a form-control y form-select) */
+.form-control.is-invalid,
+.form-select.is-invalid {
+    border-color: #dc3545;
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.form-control.is-invalid:focus,
+.form-select.is-invalid:focus {
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+/* Estilo para campos de solo lectura */
+.form-control[readonly] {
+    background-color: #e9ecef;
+    opacity: 1;
+}
+
+/* Mensajes de alerta (Bootstrap-like) */
+.alert {
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: fadeIn 0.5s ease-out; /* Animación simple */
+}
+
+.alert strong {
+    font-weight: 700;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-error,
+.alert-warning { /* Ambas clases ahora tendrán el estilo rojo para consistencia */
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+/* Clase para ocultar elementos - ¡CRUCIAL! */
+.hidden {
+    display: none !important;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilos específicos para las pestañas del formulario multi-paso (Bootstrap) */
+.nav-tabs {
+    border-bottom: 1px solid #dee2e6;
+    margin-bottom: 20px; /* Espacio entre pestañas y contenido */
+}
+
+.nav-tabs .nav-item {
+    margin-bottom: -1px; /* Para que el borde inferior de la pestaña activa se una al contenido */
+}
+
+.nav-tabs .nav-link {
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+    border-radius: .25rem .25rem 0 0;
+    margin-right: 2px;
+    color: #495057;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.nav-tabs .nav-link.active {
+    color: #28a745; /* Color de texto de pestaña activa (verde) */
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+    font-weight: bold;
+}
+
+.nav-tabs .nav-link:hover:not(.active) {
+    color: #28a745; /* Color de texto de pestaña inactiva al pasar el ratón */
+    border-color: #e9ecef #e9ecef #dee2e6;
+    background-color: #e9ecef;
+}
+
+.tab-content {
+    border: 1px solid #dee2e6;
+    border-top: none;
+    padding: 20px;
+    border-radius: 0 0 .25rem .25rem;
+    background-color: #fafafa;
+}
+
+/* Estilos de botones (Bootstrap por defecto, pero con colores específicos) */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: 1px solid transparent;
+}
+
+.btn i {
+    margin-right: 8px; /* Espacio entre icono y texto */
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: #fff;
+}
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #218838;
+    transform: translateY(-1px);
+}
+
+.btn-outline-success {
+    color: #28a745;
+    border-color: #28a745;
+    background-color: transparent;
+}
+.btn-outline-success:hover {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: white;
+    transform: translateY(-1px);
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+    border-color: #dc3545;
+}
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #c82333;
+    transform: translateY(-1px);
+}
+
+/* Contenedor de botones al final del formulario */
+.d-flex.justify-content-end.mt-3,
+.d-flex.justify-content-between.mt-4 {
+    align-items: center;
+}
+
+/* Pequeño texto de ayuda */
+.form-text {
+    font-size: 0.875em;
+    color: #6c757d;
+    margin-top: 0.25rem;
+    display: block;
+}

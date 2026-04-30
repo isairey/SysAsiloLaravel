@@ -1,0 +1,592 @@
+/* ================================================
+   ESTILOS PROFESIONALES PARA EDICIÓN DE ROLES
+   Ubicación: public/css/gestionarRolescss/editRoles.css
+   ================================================ */
+
+/* Variables CSS para consistencia */
+:root {
+  --primary-color: #4f46e5;
+  --primary-hover: #4338ca;
+  --primary-light: #eef2ff;
+  --success-color: #10b981;
+  --error-color: #ef4444;
+  --warning-color: #f59e0b;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-500: #6b7280;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --border-radius: 0.5rem;
+  --border-radius-lg: 0.75rem;
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset y base */
+* {
+  box-sizing: border-box;
+}
+
+/* Contenedor principal */
+.edit-role-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--gray-50) 0%, #ffffff 100%);
+}
+
+/* Título principal */
+.edit-role-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gray-800);
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.edit-role-title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-hover));
+  border-radius: 2px;
+}
+
+.role-name-highlight {
+  color: var(--primary-color);
+  font-weight: 800;
+}
+
+/* Alertas mejoradas */
+.alert {
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  border-radius: var(--border-radius);
+  border: none;
+  box-shadow: var(--shadow);
+  animation: slideIn 0.3s ease-out;
+}
+
+.alert-error {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  color: #991b1b;
+  border-left: 4px solid var(--error-color);
+}
+
+.alert-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.alert-title::before {
+  content: '⚠️';
+  margin-right: 0.5rem;
+}
+
+.alert ul {
+  margin: 0;
+  padding-left: 1rem;
+  list-style-type: none;
+}
+
+.alert li {
+  margin: 0.25rem 0;
+  position: relative;
+}
+
+.alert li::before {
+  content: '•';
+  color: var(--error-color);
+  margin-right: 0.5rem;
+}
+
+/* Tarjeta principal del formulario */
+.form-card {
+  background: #ffffff;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-xl);
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.form-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-hover), var(--primary-color));
+}
+
+/* Grupos de formulario */
+.form-group {
+  margin-bottom: 2rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--gray-700);
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.required-asterisk {
+  color: var(--error-color);
+  margin-left: 0.25rem;
+  font-weight: bold;
+}
+
+/* Campos de entrada */
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--gray-200);
+  border-radius: var(--border-radius);
+  font-size: 0.875rem;
+  transition: var(--transition);
+  background: #ffffff;
+  position: relative;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+  transform: translateY(-1px);
+}
+
+.form-input.error,
+.form-textarea.error {
+  border-color: var(--error-color);
+  background-color: #fef2f2;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--gray-500);
+  font-style: italic;
+}
+
+/* Textarea específico */
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+}
+
+/* Checkbox personalizado */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.custom-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+}
+
+.custom-checkbox input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.checkbox-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  background: #ffffff;
+  border: 2px solid var(--gray-300);
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .checkbox-checkmark {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.checkbox-checkmark::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  border-radius: 1px;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .checkbox-checkmark::after {
+  opacity: 1;
+}
+
+.checkbox-label {
+  margin-left: 0.75rem;
+  color: var(--gray-800);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Sección de permisos */
+.permissions-section {
+  margin-bottom: 2.5rem;
+}
+
+.permissions-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--gray-100);
+}
+
+.permissions-empty {
+  padding: 2rem;
+  text-align: center;
+  color: var(--gray-500);
+  font-style: italic;
+  background: var(--gray-50);
+  border-radius: var(--border-radius);
+  border: 2px dashed var(--gray-200);
+}
+
+.permissions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 1.5rem;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius);
+  scrollbar-width: thin;
+  scrollbar-color: var(--gray-300) transparent;
+}
+
+.permissions-grid::-webkit-scrollbar {
+  width: 6px;
+}
+
+.permissions-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.permissions-grid::-webkit-scrollbar-thumb {
+  background: var(--gray-300);
+  border-radius: 3px;
+}
+
+.permission-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem;
+  background: #ffffff;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--gray-200);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.permission-item:hover {
+  background: var(--primary-light);
+  border-color: var(--primary-color);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+.permission-checkbox {
+  margin-right: 0.75rem;
+  margin-top: 0.125rem;
+  flex-shrink: 0;
+}
+
+.permission-label {
+  flex: 1;
+  cursor: pointer;
+}
+
+.permission-name {
+  font-weight: 600;
+  color: var(--gray-800);
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.permission-description {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+  line-height: 1.4;
+}
+
+/* Notas informativas */
+.info-note {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background: var(--primary-light);
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--primary-color);
+}
+
+.info-note p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--primary-hover);
+  font-weight: 500;
+}
+
+/* Mensajes de error */
+.error-message {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--error-color);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.error-message::before {
+  content: '⚠️';
+  margin-right: 0.5rem;
+}
+
+/* Botones */
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn-secondary {
+  background: var(--gray-200);
+  color: var(--gray-800);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+  background: var(--gray-300);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+  color: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--primary-hover), #3730a3);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-icon {
+  margin-right: 0.5rem;
+  font-size: 0.875rem;
+}
+
+/* Animaciones */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .edit-role-container {
+    padding: 1rem;
+  }
+  
+  .form-card {
+    padding: 1.5rem;
+  }
+  
+  .edit-role-title {
+    font-size: 1.5rem;
+  }
+  
+  .permissions-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+  
+  .button-group {
+    flex-direction: column-reverse;
+  }
+  
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .edit-role-container {
+    padding: 0.5rem;
+  }
+  
+  .form-card {
+    padding: 1rem;
+    border-radius: var(--border-radius);
+  }
+  
+  .permissions-grid {
+    max-height: 300px;
+  }
+}
+
+/* Estados especiales para roles de administrador */
+.admin-protected {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.admin-protected .permission-item {
+  background: var(--gray-50);
+  border-color: var(--gray-300);
+}
+
+.admin-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  color: #92400e;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 1rem;
+  margin-left: 0.5rem;
+}
+
+/* Mejoras de accesibilidad */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus visible mejorado */
+.btn:focus-visible,
+.form-input:focus-visible,
+.form-textarea:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Indicador de carga */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+  position: relative;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid var(--primary-color);
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

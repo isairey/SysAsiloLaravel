@@ -1,0 +1,233 @@
+/* public/css/Proteccion/tabs/encargado.css */
+/* Estilos para el título principal */
+    #encargado h4 {
+        grid-column: 1 / -1; /* Ocupa todo el ancho en el grid */
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 20px;
+        padding: 15px 20px;
+        background: linear-gradient(135deg, #9b2c2c, #e53e3e);
+        color: white;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(155, 44, 44, 0.3);
+    }
+    #encargado h4 {
+    font-size: 1.2rem;
+    padding: 12px 15px;
+    }
+/* Estilos generales para el formulario de encargado */
+.tab-pane.active {
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Aplicar grid layout solo cuando el tab de encargado esté activo */
+.tab-pane#encargado.active {
+    display: grid !important; /* !important para sobrescribir el display: block del CSS principal */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* Estilos específicos para la sección de tipo de encargado */
+#encargado > div:first-child {
+    grid-column: 1 / -1; /* Ocupa todo el ancho en el grid */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+#encargado > div:first-child > label:first-child {
+    font-weight: 700;
+    color: #2d3748;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* Estilos para los radio buttons */
+#encargado > div:first-child > label:not(:first-child) {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    color: #4a5568;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+#encargado > div:first-child > label:not(:first-child):hover {
+    background-color: #e2e8f0;
+}
+
+#encargado input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* Estilos para las secciones de persona natural y jurídica */
+#naturalFields,
+#juridicaFields {
+    grid-column: 1 / -1; /* Ocupa todo el ancho en el grid */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 25px;
+    background-color: #f7fafc;
+    border-radius: 10px;
+    border-left: 4px solid #9b2c2c;
+    margin-top: 20px;
+}
+
+/* Solo aplicar display grid cuando estén visibles */
+#naturalFields[style*="display: block"],
+#juridicaFields[style*="display: block"] {
+    display: grid !important;
+}
+
+#naturalFields strong,
+#juridicaFields strong {
+    grid-column: 1 / -1;
+    font-size: 1.2rem;
+    color: #2d3748;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+/* Estilos para cada grupo de label e input/select dentro de las secciones */
+#naturalFields > div,
+#juridicaFields > div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Estilos para las etiquetas (labels) */
+#encargado label,
+#naturalFields label,
+#juridicaFields label {
+    font-weight: 600;
+    color: #4a5568;
+    font-size: 0.95rem;
+}
+
+/* Estilos para los campos de entrada (inputs) */
+#encargado input[type="text"],
+#encargado input[type="number"],
+#encargado input[type="email"],
+#encargado select,
+#encargado textarea,
+#naturalFields input[type="text"],
+#naturalFields input[type="number"],
+#naturalFields input[type="email"],
+#naturalFields select,
+#naturalFields textarea,
+#juridicaFields input[type="text"],
+#juridicaFields input[type="number"],
+#juridicaFields input[type="email"],
+#juridicaFields select,
+#juridicaFields textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #2d3748;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+#encargado input:focus,
+#encargado select:focus,
+#encargado textarea:focus,
+#naturalFields input:focus,
+#naturalFields select:focus,
+#naturalFields textarea:focus,
+#juridicaFields input:focus,
+#juridicaFields select:focus,
+#juridicaFields textarea:focus {
+    border-color: #9b2c2c;
+    box-shadow: 0 0 0 3px rgba(155, 44, 44, 0.2);
+    outline: none;
+    background-color: #ffffff;
+}
+
+/* Estilos para la navegación de pestañas */
+#encargado > div[style*="justify-content: space-between"] {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding-top: 20px;
+    border-top: 1px solid #edf2f7;
+    margin-top: 20px;
+}
+
+#encargado button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#encargado button[onclick="nextTab()"] {
+    background: linear-gradient(135deg, #9b2c2c, #e53e3e);
+    color: white;
+}
+
+#encargado button[onclick="nextTab()"]:hover {
+    background: linear-gradient(135deg, #e53e3e, #9b2c2c);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#encargado button[onclick="backTab()"] {
+    background-color: #6c757d;
+    color: white;
+}
+
+#encargado button[onclick="backTab()"]:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .tab-pane#encargado.active {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    #naturalFields,
+    #juridicaFields {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    #encargado > div[style*="justify-content: space-between"] {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    #encargado > div:first-child {
+        padding: 15px;
+    }
+}

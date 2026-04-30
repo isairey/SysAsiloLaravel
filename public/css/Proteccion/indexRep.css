@@ -1,0 +1,309 @@
+/* Estilos específicos para la vista de Adultos Mayores */
+
+/* Estilo para la tarjeta de estadísticas personalizada */
+.card-header{
+    background-color: #E53E3E;
+}
+
+.buscador{
+    padding-top: 30px;
+    width: 100%;
+    padding-left: 30px;
+}
+.card-adultos-stat {
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+}
+.card-body{
+    margin-top: -10px;
+}
+.card-adultos-stat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-adultos-stat .card-body {
+    padding: 20px;
+}
+
+.card-adultos-stat .stat-icon {
+    font-size: 2.5rem;
+    opacity: 0.3;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.card-adultos-stat .stat-title {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+
+.card-adultos-stat .stat-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* Estilos específicos para la tabla */
+#adultosTable {
+    width: 100% !important;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+#adultosTable th,
+#adultosTable td {
+    padding: 12px 15px;
+    border: 1px solid #e9ecef;
+    vertical-align: middle;
+}
+
+#adultosTable thead th {
+    background-color: #f2f4f7;
+    color: #495057;
+    font-weight: 600;
+    text-align: left;
+}
+
+#adultosTable tbody tr:nth-child(even) {
+    background-color: #fdfdfd;
+}
+
+#adultosTable tbody tr:hover {
+    background-color: #e6f7ff;
+}
+
+/* Estilos para los botones de acción */
+.btn-group .btn {
+    margin-right: 5px;
+    border-radius: 5px;
+    font-size: 0.85em;
+    padding: 6px 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-group .btn i {
+    margin-right: 0; /* Eliminamos el margen derecho para iconos */
+}
+
+/* Estilos para el estado del adulto mayor (si lo agregas después) */
+.badge-estado {
+    padding: 0.4em 0.7em;
+    border-radius: 0.25rem;
+    font-size: 0.75em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.badge-activo {
+    background-color: #28a745 !important;
+    color: #fff;
+}
+
+.badge-inactivo {
+    background-color: #dc3545 !important;
+    color: #fff;
+}
+
+/* Responsividad adicional */
+@media (max-width: 768px) {
+    .card-adultos-stat .stat-value {
+        font-size: 1.5rem;
+    }
+    
+    #adultosTable {
+        font-size: 0.9em;
+    }
+    
+    .btn-group .btn {
+        padding: 5px 8px;
+        font-size: 0.8em;
+    }
+}
+/* Estilos para el buscador */
+#busquedaInput {
+    border-left: none;
+    padding-left: 5px;
+}
+
+.input-group-text {
+    background-color: #6a11cb;
+    border-right: none;
+}
+
+.input-group-text i {
+    color: white;
+}
+
+#limpiarBusqueda {
+    border-left: none;
+}
+
+/* Ajustar el ancho del input de búsqueda */
+.form-control {
+    min-width: 250px;
+}
+
+/* Efecto hover para el botón limpiar */
+#limpiarBusqueda:hover {
+    background-color: #f8f9fa;
+}
+
+/* Estilos para el texto de ayuda */
+.text-muted {
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: block;
+}
+
+
+div.dataTables_filter {
+    display: none;
+}
+
+/* #################################################################################### */
+        /* Estilos generales de la tabla y filtros (mantener o ajustar según tu CSS existente) */
+        .container-fluid {
+            padding: 20px;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+        .form-filter {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+            align-items: flex-end; /* Alinea los elementos en la parte inferior */
+        }
+        .form-filter .input-group {
+            flex: 1; /* Permite que los input-groups crezcan */
+            min-width: 250px; /* Ancho mínimo para cada grupo de filtro */
+        }
+        .form-filter label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        .form-filter input[type="text"],
+        .form-filter input[type="search"],
+        .form-filter .form-control { /* Asegura estilos para Bootstrap/tu framework */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%; /* Ocupa el 100% del contenedor de input-group */
+        }
+        .form-filter button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .form-filter button:hover {
+            background-color: #218838;
+        }
+        .form-filter button.reset {
+            background-color: #ffc107;
+            color: white;
+        }
+        .form-filter button.reset:hover {
+            background-color: #e0a800;
+            color: white;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+            min-width: 1000px; /* Aumentado para la nueva columna */
+        }
+        .table th, .table td {
+            padding: 12px 15px;
+            border: 1px solid #dee2e6;
+            text-align: left;
+            vertical-align: middle;
+        }
+        .table th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            color: #495057;
+        }
+        .table tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .table tbody tr:hover {
+            background-color: #e9ecef;
+        }
+        .btn-action {
+            padding: 8px 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.85em;
+            margin-right: 5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn-info { background-color: #17a2b8; color: white; }
+        .btn-info:hover { background-color: #138496; }
+        .btn-warning { background-color: #ffc107; color: #333; }
+        .btn-warning:hover { background-color: #e0a800; }
+        .btn-danger { background-color: #dc3545; color: white; }
+        .btn-danger:hover { background-color: #c82333; }
+        .pagination-container {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+        }
+        .pagination {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+        .pagination li {
+            margin: 0 5px;
+        }
+        .pagination li a, .pagination li span {
+            padding: 8px 12px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #007bff;
+            transition: all 0.3s ease;
+        }
+        .pagination li a:hover {
+            background-color: #e9ecef;
+        }
+        .pagination li.active span {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+        .pagination li.disabled span {
+            color: #6c757d;
+            cursor: not-allowed;
+            background-color: #f8f9fa;
+        }

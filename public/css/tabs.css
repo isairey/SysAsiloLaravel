@@ -1,0 +1,84 @@
+/* Contenedor de las pestañas */
+#formTabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    list-style: none;
+    padding: 0;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 10px;
+}
+
+#formTabs li {
+    margin: 0;
+}
+
+/* Estilos de cada tab */
+.tab-link {
+    padding: 10px 16px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+}
+
+.tab-link.active {
+    background-color: #ffffff;
+    font-weight: bold;
+    border-bottom: 2px solid #ffffff;
+}
+
+/* Paneles de contenido */
+.tab-pane {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background: #fafafa;
+    overflow: hidden;
+}
+
+
+.tab-pane.active {
+    display: block;
+}
+
+/* STYLE TABS */
+ul#formTabs {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 10px;
+            padding: 0;
+            margin: 0 0 15px 0;
+            border-bottom: 2px solid #ccc;
+        }
+
+        .tab-link {
+            padding: 10px 16px;
+            background: #eee;
+            border: 1px solid #ccc;
+            border-bottom: none;
+            text-decoration: none;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .tab-link.active {
+            background: #fff;
+            font-weight: bold;
+            border-bottom: 2px solid white;
+        }
+
+        .tab-pane {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background: #fafafa;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }

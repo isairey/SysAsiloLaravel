@@ -1,0 +1,172 @@
+/* public/css/Medico/tabs/examencomplementario.css */
+
+/* Estilos generales para el panel de la pestaña Exámenes Complementarios cuando está activo */
+.tab-pane#examenes.active {
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Estilos para la sección de formulario de exámenes complementarios */
+.tab-pane#examenes.active .examenes-form-section {
+    padding: 25px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background-color: #fdfdfd;
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilos para los títulos dentro de la sección de exámenes */
+.tab-pane#examenes.active h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 20px;
+    padding: 12px 15px;
+    background: linear-gradient(135deg, #9b2c2c, #e53e3e); /* Colores que combinan con tus botones success */
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+}
+
+/* Estilos para el grid de campos de exámenes generales */
+.tab-pane#examenes.active .examenes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+/* Estilos para los grupos de formulario dentro de exámenes generales */
+.tab-pane#examenes.active .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Estilos para las etiquetas (labels) dentro de exámenes generales */
+.tab-pane#examenes.active .form-label {
+    font-weight: 600;
+    color: #4a5568;
+    font-size: 0.95rem;
+}
+
+/* Estilos para los campos de entrada de exámenes generales */
+.tab-pane#examenes.active .full-width-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #2d3748;
+    background-color: #f7fafc;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* Efecto de enfoque para inputs */
+.tab-pane#examenes.active .full-width-input:focus,
+.tab-pane#examenes.active .table-input:focus {
+    border-color: #28a745; /* Color primario del tema para el enfoque */
+    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.2);
+    outline: none;
+    background-color: #ffffff;
+}
+
+/* Estilos para el contenedor de la tabla de medicamentos */
+.tab-pane#examenes.active .medicamentos-table-container {
+    margin-top: 35px;
+    overflow-x: auto;
+}
+
+/* Estilos de la tabla de medicamentos */
+.tab-pane#examenes.active .custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 0.95rem;
+}
+
+.tab-pane#examenes.active .custom-table th,
+.tab-pane#examenes.active .custom-table td {
+    border: 1px solid #e2e8f0;
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.tab-pane#examenes.active .custom-table th {
+    background-color: #ebf4ff; /* Fondo más claro para los encabezados */
+    font-weight: bold;
+    color: #2d3748;
+}
+
+/* Estilos para los inputs dentro de la tabla */
+.tab-pane#examenes.active .table-input {
+    width: calc(100% - 4px); /* Ajuste para el borde */
+    padding: 8px;
+    border: 1px solid #cbd5e0;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+}
+
+/* Estilos para los botones de añadir y eliminar fila */
+.tab-pane#examenes.active .btn-add-row,
+.tab-pane#examenes.active .btn-remove-row {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tab-pane#examenes.active .btn-add-row {
+    background-color: #28a745;
+    color: white;
+    margin-top: 20px; /* Espacio superior */
+}
+.tab-pane#examenes.active .btn-add-row:hover {
+    background-color: #218838;
+    transform: translateY(-1px);
+}
+
+.tab-pane#examenes.active .btn-remove-row {
+    background-color: #dc3545;
+    color: white;
+}
+.tab-pane#examenes.active .btn-remove-row:hover {
+    background-color: #c82333;
+    transform: translateY(-1px);
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .tab-pane#examenes.active {
+        padding: 20px;
+    }
+    .tab-pane#examenes.active .examenes-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .tab-pane#examenes.active .custom-table {
+        font-size: 0.85rem;
+    }
+    .tab-pane#examenes.active .custom-table th,
+    .tab-pane#examenes.active .custom-table td {
+        padding: 8px;
+    }
+    .tab-pane#examenes.active .table-input {
+        padding: 6px;
+    }
+    .tab-pane#examenes.active .btn-add-row,
+    .tab-pane#examenes.active .btn-remove-row {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+}

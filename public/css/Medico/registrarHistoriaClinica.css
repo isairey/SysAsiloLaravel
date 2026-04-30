@@ -1,0 +1,297 @@
+/* Paleta de colores corporativa */
+:root {
+    --color-primary: #9B2C2C;
+    --color-secondary: #FFB500;
+    --color-accent: #E53E3E;
+    --color-light: #F8F9FA;
+    --color-gray: #6C757D;
+    --color-dark: #343A40;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+/* Estructura principal */
+.medico-container {
+    padding: 20px;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.card-header {
+    background: linear-gradient(135deg, var(--empresa-primary), #C53A3A);
+    color: white;
+    padding: 15px 20px;
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.card-body {
+    padding: 25px;
+}
+
+/* Tabs */
+.nav-tabs {
+    border-bottom: 2px solid var(--empresa-primary);
+    margin-bottom: 25px;
+}
+
+.nav-tabs .nav-link {
+    color: var(--text-primary);
+    font-weight: 500;
+    border: none;
+    border-bottom: 3px solid transparent;
+    padding: 12px 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link:hover {
+    border-bottom: 3px solid var(--empresa-secondary);
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--empresa-primary);
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid var(--empresa-primary);
+    font-weight: 600;
+}
+
+.tab-content {
+    padding: 20px 0;
+}
+
+/* Campos del formulario */
+.form-label {
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.form-control, .form-select {
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--background-white);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--empresa-primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(155, 44, 44, 0.1);
+}
+
+.form-control-static {
+    padding: 10px 12px;
+    background-color: var(--background-light);
+    border-radius: 6px;
+    display: block;
+    min-height: 44px;
+}
+
+textarea.form-control {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Sección de exámenes complementarios */
+.examenes-form-section {
+    padding: 25px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--background-light);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.examenes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+/* Tabla de medicamentos */
+.medicamentos-table-container {
+    margin-top: 30px;
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.medicamentos-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0;
+    background-color: var(--background-white);
+}
+
+.medicamentos-table th {
+    background: linear-gradient(135deg, var(--empresa-primary), #C53A3A);
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 500;
+}
+
+.medicamentos-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+}
+
+.medicamentos-table input[type="text"],
+.medicamentos-table input[type="number"] {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--background-white);
+    transition: border-color 0.3s;
+}
+
+.medicamentos-table input:focus {
+    border-color: var(--empresa-primary);
+    outline: none;
+}
+
+/* Botones */
+.btn {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+}
+
+.btn-primary {
+    background: var(--empresa-primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #7a2424;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(155, 44, 44, 0.2);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
+
+.btn-success {
+    background: var(--empresa-secondary);
+    color: #212529;
+}
+
+.btn-success:hover {
+    background: #e6a500;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255, 181, 0, 0.2);
+}
+
+.btn-danger {
+    background: var(--empresa-accent);
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+}
+
+.add-row-btn {
+    margin-top: 15px;
+}
+
+.remove-row-btn {
+    padding: 5px 10px;
+    font-size: 0.85em;
+}
+
+/* Mensajes de alerta */
+.alert {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Responsividad */
+@media (max-width: 992px) {
+    .examenes-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .medico-container {
+        padding: 15px;
+    }
+    
+    .card-header {
+        padding: 15px;
+    }
+    
+    .nav-tabs .nav-link {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .examenes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .medicamentos-table {
+        min-width: 600px;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-body {
+        padding: 20px 15px;
+    }
+    
+    .text-center .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .text-center .btn:last-child {
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,333 @@
+/* ----------------------------------------------------------------------------------- */
+/*  Hoja de estilos: indexRoles.css
+    Ubicación: public/css/gestionarRolescss/indexRoles.css
+    Objetivo: Recrear el estilo de “Listado de Adultos Mayores” en el listado de Roles:
+      - Cabecera verde con título + badge de total
+      - Tarjeta blanca para la tabla
+      - Botón “Agregar” estilizado
+      - Alertas de feedback (éxito, error)
+      - Tabla responsiva con cabeceras y hover en filas
+      - Badges para estado “Activo” / “Inactivo”
+      - Íconos de acción (editar, eliminar) con colores
+      - Mensaje “No hay datos” centrado
+*/
+
+/* FontAwesome (asegúrate de que esté importado globalmente para que los <i class="fas ..."> funcionen) */
+/* Ejemplo en <head> de tu template principal: 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+*/
+
+/* Contenedor general */
+.roles-container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 15px;
+    font-family: 'Inter', sans-serif;
+    color: #1f2937; /* gris oscuro */
+}
+
+/* -------------------- Cabecera Verde (header-card) -------------------- */
+.roles-header-card {
+    background-color: #10B981; /* Verde esmeralda */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    color: #ffffff;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.roles-header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.roles-header-icon {
+    font-size: 1.4rem;
+}
+
+.roles-header-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.roles-header-right {
+    /* Badge de total */
+}
+
+.roles-header-badge {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+/* -------------------- Tarjeta de Búsqueda (opcional) -------------------- */
+/* Si quieres habilitar búsqueda, descomenta su HTML en la vista y aplica estos estilos. */
+.roles-search-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    padding: 18px 20px;
+    margin-bottom: 20px;
+}
+
+.roles-search-input-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 6px;
+}
+
+.roles-search-icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    font-size: 1rem;
+}
+
+.roles-search-input {
+    width: 100%;
+    padding: 10px 12px 10px 36px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: #374151;
+    transition: border-color 0.2s ease;
+}
+
+.roles-search-input:focus {
+    outline: none;
+    border-color: #10B981; /* coincide con verde cabecera */
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+}
+
+.roles-search-clear {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    color: #6b7280;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 6px;
+    border-radius: 4px;
+    transition: background-color 0.15s ease;
+}
+
+.roles-search-clear:hover {
+    background-color: #f3f4f6;
+}
+
+.roles-search-help {
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin-top: 2px;
+}
+
+/* -------------------- Mensajes de Feedback -------------------- */
+.roles-alert {
+    border-left-width: 4px;
+    border-left-style: solid;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.roles-alert-success {
+    background-color: #ecfdf5; /* verde muy claro */
+    border-color: #10B981;     /* borde verde */
+    color: #065f46;
+}
+
+.roles-alert-error {
+    background-color: #fef2f2; /* rojo muy claro */
+    border-color: #ef4444;     /* borde rojo */
+    color: #7f1d1d;
+}
+
+/* -------------------- Tarjeta Blanca de la Tabla -------------------- */
+.roles-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.roles-card-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 12px 20px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* Botón “Agregar” */
+.roles-btn-add {
+    background-color: #2563eb; /* azul primario */
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.roles-btn-add:hover {
+    background-color: #1e40af;
+    box-shadow: 0 2px 6px rgba(30, 40, 175, 0.3);
+}
+
+/* -------------------- Tabla Responsiva -------------------- */
+.roles-table-responsive {
+    overflow-x: auto;
+}
+
+.roles-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.94rem;
+}
+
+.roles-table thead th {
+    background-color: #f3f4f6; /* gris muy claro */
+    color: #1f2937;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.83rem;
+    padding: 12px 16px;
+    border-bottom: 2px solid #e5e7eb;
+    text-align: left;
+}
+
+.roles-table tbody td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: middle;
+    color: #374151;
+}
+
+.roles-table tbody tr.roles-hover-row:hover {
+    background-color: #f9fafb;
+}
+
+/* Centrar texto en columnas que llevan .text-center */
+.roles-table .text-center {
+    text-align: center;
+}
+
+/* Cuando no hay datos */
+.roles-no-data {
+    text-align: center;
+    padding: 20px;
+    color: #6b7280;
+    font-style: italic;
+}
+
+/* -------------------- Badges Estado -------------------- */
+.roles-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+    min-width: 60px;
+}
+
+.roles-badge-active {
+    background-color: #d1fae5; /* verde muy claro */
+    color: #065f46;            /* verde oscuro */
+}
+
+.roles-badge-inactive {
+    background-color: #fee2e2; /* rojo muy claro */
+    color: #7f1d1d;            /* rojo oscuro */
+}
+
+/* -------------------- Íconos de acciones (editar, eliminar) -------------------- */
+.roles-actions a,
+.roles-actions button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.15s ease, box-shadow 0.15s ease;
+    margin: 0 4px;
+    color: #fff;
+}
+
+/* Botón Editar (azul) */
+.role-btn-edit {
+    background-color: #3b82f6;
+}
+
+.role-btn-edit:hover {
+    background-color: #2563eb;
+    box-shadow: 0 2px 4px rgba(37, 99, 235, 0.3);
+}
+
+/* Botón Eliminar (rojo) */
+.role-btn-delete {
+    background-color: #ef4444;
+}
+
+.role-btn-delete:hover {
+    background-color: #dc2626;
+    box-shadow: 0 2px 4px rgba(220, 38, 38, 0.3);
+}
+
+/* Botón deshabilitado */
+.role-btn-disabled {
+    background-color: #d1d5db;
+    color: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* -------------------- Ajustes Responsivos -------------------- */
+@media (max-width: 768px) {
+    .roles-header-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .roles-header-right {
+        width: 100%;
+        text-align: right;
+    }
+    .roles-btn-add {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+    }
+    .roles-table thead th,
+    .roles-table tbody td {
+        padding: 8px 10px;
+    }
+}

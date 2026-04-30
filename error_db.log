@@ -1,0 +1,1 @@
+[2025-06-27 14:28:06] ERROR CONEXIÓN: SQLSTATE[08006] [7] connection to server at "localhost" (::1), port 5432 failed: fe_sendauth: no password supplied

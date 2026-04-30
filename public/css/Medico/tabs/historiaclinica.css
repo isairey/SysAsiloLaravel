@@ -1,0 +1,164 @@
+/* public/css/Medico/tabs/historiaclinica.css */
+
+/* Estilos generales para el panel de la pestaña Historia Clínica cuando está activo */
+.tab-pane#historia.active {
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    /* Usar display grid para organizar los elementos del formulario */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas responsivas */
+    gap: 25px; /* Espacio entre elementos del grid */
+}
+
+/* Estilos para el título principal dentro de la pestaña */
+.tab-pane#historia.active h4 {
+    grid-column: 1 / -1; /* Ocupa todo el ancho en el grid */
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #9b2c2c, #e53e3e); /* Colores que combinan con tus botones primary */
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Estilos para cada grupo de label e input/textarea */
+.tab-pane#historia.active .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Estilos para las etiquetas (labels) */
+.tab-pane#historia.active .form-label {
+    font-weight: 600;
+    color: #4a5568; /* Un gris oscuro para buena legibilidad */
+    font-size: 0.95rem;
+}
+
+/* Estilos para los campos de entrada (inputs y textareas) */
+.tab-pane#historia.active .full-width-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #cbd5e0; /* Un borde suave */
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #2d3748; /* Color de texto para los inputs */
+    background-color: #f7fafc; /* Fondo ligeramente gris para los inputs */
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* Estilos para los campos estáticos (información no editable) */
+.tab-pane#historia.active .form-static-value {
+    padding: 12px 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background-color: #edf2f7; /* Fondo más claro para valores estáticos */
+    color: #4a5568;
+    font-size: 1rem;
+    min-height: 48px; /* Para alinear con la altura de los inputs */
+    display: flex; /* Para centrar verticalmente si el texto es corto */
+    align-items: center;
+}
+
+/* Estilos para las rejillas de 2 y 3 columnas */
+.tab-pane#historia.active .form-grid-2-col {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    grid-column: 1 / -1; /* Ocupa todo el ancho si es un grid anidado */
+}
+.tab-pane#historia.active .form-grid-3-col {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    grid-column: 1 / -1; /* Ocupa todo el ancho si es un grid anidado */
+}
+
+
+/* Efecto de enfoque para inputs/textareas */
+.tab-pane#historia.active input:focus,
+.tab-pane#historia.active textarea:focus {
+    border-color: #007bff; /* Color primario de tu tema */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2); /* Sutil resplandor al enfocar */
+    outline: none;
+    background-color: #ffffff;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .tab-pane#historia.active {
+        padding: 20px;
+        gap: 20px;
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+
+    .tab-pane#historia.active .form-grid-2-col,
+    .tab-pane#historia.active .form-grid-3-col {
+        grid-template-columns: 1fr; /* También a una columna en pantallas pequeñas */
+    }
+}
+/* Estilos para el grupo de radio buttons */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    gap: 8px; /* Espacio entre los radio buttons */
+}
+.radio-group div {
+    display: flex;
+    align-items: center;
+}
+.radio-group input[type="radio"] {
+    /* Ocultar el radio button por defecto del navegador */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Estilos personalizados */
+    width: 20px; /* Tamaño del círculo exterior */
+    height: 20px; /* Tamaño del círculo exterior */
+    border: 2px solid var(--color-gray); /* Borde del círculo exterior */
+    border-radius: 50%; /* Hacerlo circular */
+    outline: none;
+    cursor: pointer;
+    position: relative; /* Para el círculo interior */
+    flex-shrink: 0; /* Prevenir que se encoja en un contenedor flex */
+    margin-right: 8px; /* Espacio entre el radio y la etiqueta */
+    transition: all 0.2s ease;
+}
+
+.radio-group input[type="radio"]:checked {
+    border-color: #9b2c2c; /* Color del borde cuando está seleccionado */
+    background-color: #e53e3e; /* Fondo del círculo exterior cuando está seleccionado */
+}
+
+.radio-group input[type="radio"]:checked::before {
+    content: '';
+    display: block;
+    width: 10px; /* Tamaño del círculo interior */
+    height: 10px; /* Tamaño del círculo interior */
+    border-color: #9b2c2c; /* Color del borde cuando está seleccionado */
+    background-color: #e53e3e; /* Fondo del círculo exterior cuando está seleccionado */
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.radio-group input[type="radio"]:focus {
+    box-shadow: 0 0 0 3px rgba(155, 44, 44, 0.2); /* Anillo de enfoque */
+}
+
+.radio-group label1 {
+    font-weight: 600;
+    color: #4a5568; /* Un gris oscuro para buena legibilidad */
+    font-size: 0.95rem;
+}

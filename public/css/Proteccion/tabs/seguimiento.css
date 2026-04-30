@@ -1,0 +1,249 @@
+/* public/css/Proteccion/tabs/seguimiento.css */
+
+/* Estilos generales para el formulario de seguimiento del caso */
+.tab-pane.active {
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Aplicar estilos específicos cuando el tab de seguimiento esté activo */
+.tab-pane#seguimiento.active {
+    display: block;
+}
+
+/* Estilos para el título principal */
+    #seguimiento h4 {
+        grid-column: 1 / -1; /* Ocupa todo el ancho en el grid */
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 20px;
+        padding: 15px 20px;
+        background: linear-gradient(135deg, #9b2c2c, #e53e3e);
+        color: white;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(155, 44, 44, 0.3);
+    }
+    #seguimiento h4 {
+    font-size: 1.2rem;
+    padding: 12px 15px;
+    }
+
+/* Container principal de seguimientos */
+#seguimiento #seguimientos-container {
+    margin-bottom: 25px;
+}
+
+/* Estilos para cada grupo de seguimiento */
+#seguimiento .seguimiento-group {
+    background-color: #f8f9fa;
+    border: 2px solid #e2e8f0 !important;
+    border-radius: 12px !important;
+    padding: 25px !important;
+    margin-bottom: 20px !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+#seguimiento .seguimiento-group:hover {
+    border-color: #9b2c2c !important;
+    box-shadow: 0 4px 15px rgba(155, 44, 44, 0.1);
+}
+
+/* Título de cada seguimiento individual */
+#seguimiento .seguimiento-group h6 {
+    grid-column: 1 / -1;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Estilos para cada grupo de label e input/textarea dentro de seguimientos */
+#seguimiento .seguimiento-group > div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Estilos para las etiquetas (labels) */
+#seguimiento label {
+    font-weight: 600;
+    color: #4a5568;
+    font-size: 0.95rem;
+}
+
+/* Estilos para los campos de entrada */
+#seguimiento input[type="text"],
+#seguimiento input[type="date"],
+#seguimiento textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #2d3748;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* Campos readonly/disabled con estilo diferenciado */
+#seguimiento input[readonly],
+#seguimiento input[disabled] {
+    background-color: #f1f5f9;
+    color: #64748b;
+    cursor: not-allowed;
+}
+
+/* Estados de focus para los campos */
+#seguimiento input:focus,
+#seguimiento textarea:focus {
+    border-color: #9b2c2c;
+    box-shadow: 0 0 0 3px rgba(155, 44, 44, 0.2);
+    outline: none;
+    background-color: #ffffff;
+}
+
+/* Estilos específicos para textareas */
+#seguimiento textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Botón para agregar seguimiento */
+#seguimiento button[onclick="agregarSeguimiento()"] {
+    background: linear-gradient(135deg, #38a169, #48bb78);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+}
+
+#seguimiento button[onclick="agregarSeguimiento()"]:hover {
+    background: linear-gradient(135deg, #48bb78, #38a169);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Contenedor de navegación */
+#seguimiento div[style*="justify-content: space-between"] {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid #edf2f7;
+    gap: 15px;
+}
+
+/* Estilos para botones de navegación */
+#seguimiento button[onclick="backTab()"],
+#seguimiento button[onclick="nextTab()"] {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón anterior */
+#seguimiento button[onclick="backTab()"] {
+    background: linear-gradient(135deg, #718096, #a0aec0);
+    color: white;
+}
+
+#seguimiento button[onclick="backTab()"]:hover {
+    background: linear-gradient(135deg, #a0aec0, #718096);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Botón siguiente */
+#seguimiento button[onclick="nextTab()"] {
+    background: linear-gradient(135deg, #9b2c2c, #e53e3e);
+    color: white;
+}
+
+#seguimiento button[onclick="nextTab()"]:hover {
+    background: linear-gradient(135deg, #e53e3e, #9b2c2c);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .tab-pane#seguimiento.active {
+        padding: 20px;
+    }
+
+    #seguimiento .seguimiento-group {
+        grid-template-columns: 1fr;
+        padding: 20px !important;
+        gap: 15px;
+    }
+
+    #seguimiento div[style*="justify-content: space-between"] {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    #seguimiento button {
+        width: 100%;
+        justify-self: stretch;
+    }
+}
+
+@media (max-width: 480px) {
+    .tab-pane#seguimiento.active {
+        padding: 15px;
+    }
+
+    #seguimiento .seguimiento-group {
+        padding: 15px !important;
+        gap: 12px;
+    }
+
+    #seguimiento input,
+    #seguimiento textarea {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+}
+.botonEliminarSeguimiento{
+    background: linear-gradient(135deg, #e53e3e, #c53030) !important;
+    color: white !important;
+    width: 200px;
+    height: 45px;
+    border: none !important;
+    border-radius: 6px !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 6px rgba(229, 62, 62, 0.2) !important;
+    text-decoration: none !important;
+    margin-left: 245%;
+}
+.botonEliminarSeguimiento::hover{
+    background: linear-gradient(135deg, #c53030, #e53e3e) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 10px rgba(229, 62, 62, 0.3) !important;
+}

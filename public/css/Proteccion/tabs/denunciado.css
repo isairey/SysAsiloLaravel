@@ -1,0 +1,94 @@
+/* public/css/Proteccion/denunciado.css */
+
+/* Paleta de colores corporativa */
+:root {
+    --empresa-primary: #9B2C2C;
+    --empresa-secondary: #FFB500;
+    --empresa-accent: #E53E3E;
+    --border-color: #e2e8f0;
+    --background-light: #f8fafc;
+    --background-white: #ffffff;
+    --text-primary: #2d3748;
+    --text-secondary: #4a5568;
+}
+
+/* Estilos generales del formulario */
+.denunciado-form {
+    background-color: var(--background-white);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 25px;
+    border-left: 4px solid var(--empresa-accent); /* Color de acento para diferenciar */
+}
+
+.denunciado-form h4 {
+    color: var(--empresa-accent);
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Campos del formulario */
+.denunciado-fields {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.field-group {
+    margin-bottom: 15px;
+}
+
+.field-group label {
+    display: block;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.field-group input,
+.field-group select,
+.field-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--background-white);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.field-group input:focus,
+.field-group select:focus,
+.field-group textarea:focus {
+    border-color: var(--empresa-accent);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.1);
+}
+
+.field-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Estilos para selects */
+.field-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%239B2C2C' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    padding-right: 35px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .denunciado-fields {
+        grid-template-columns: 1fr;
+    }
+    
+    .field-group textarea {
+        min-height: 80px;
+    }
+}

@@ -1,0 +1,226 @@
+/* Estilos generales para la vista */
+        body {
+            font-family: 'Times New Roman', serif; /* Fuente más formal similar a documentos */
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0; /* Fondo gris claro para la vista web */
+            color: #333;
+            line-height: 1.5;
+            font-size: 11pt; /* Tamaño de fuente base */
+        }
+        .report-container {
+            width: 21cm; /* Ancho A4 */
+            min-height: 29.7cm; /* Alto A4 */
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 2.5cm; /* Márgenes simulan un documento */
+            box-sizing: border-box; /* Incluir padding en el ancho/alto */
+        }
+
+        /* Encabezado del documento */
+        .report-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .report-header h1 {
+            font-size: 16pt;
+            margin: 0 0 5px 0;
+            text-transform: uppercase;
+        }
+        .report-header .unit-info {
+            font-size: 10pt;
+            margin-bottom: 10px;
+        }
+        .report-header .meta-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10pt;
+            margin-top: 15px;
+        }
+
+        /* Secciones del reporte */
+        .section {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-weight: bold;
+            font-size: 12pt;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #000; /* Subrayado como en el doc */
+            padding-bottom: 3px;
+        }
+
+        /* Estilos de tabla para replicar el layout de campos */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        .data-table td {
+            padding: 2px 5px;
+            vertical-align: top;
+            border: none; /* No bordes en las celdas individuales */
+        }
+        .data-table td strong {
+            font-weight: bold;
+            display: inline-block;
+            min-width: 120px; /* Asegura alineación de etiquetas */
+        }
+        .data-table .field-value {
+            border-bottom: 1px dotted #999; /* Línea punteada para rellenar */
+            padding-bottom: 1px;
+            display: inline-block;
+            width: calc(100% - 130px); /* Ajusta el ancho para dejar espacio a la etiqueta */
+        }
+        .data-table.two-columns td {
+            width: 50%; /* Divide la tabla en dos columnas lógicas */
+        }
+
+        /* Estilos específicos para el grupo familiar y anexos (que son listas/tablas) */
+        .list-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .list-table th, .list-table td {
+            border: 1px solid #000;
+            padding: 5px;
+            text-align: left;
+            font-size: 10pt;
+        }
+        .list-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        /* Estilos para el Croquis */
+        .croquis-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .croquis-image-container {
+            border: 1px solid #000;
+            margin-top: 10px;
+            width: 100%;
+            height: 250px; /* Altura fija para el espacio del croquis */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden; /* Asegura que la imagen no se desborde */
+        }
+        .croquis-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* Ajusta la imagen dentro del contenedor manteniendo el aspecto */
+        }
+        .croquis-signature-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 20px;
+            font-size: 10pt;
+        }
+        .croquis-signature-line div {
+            flex: 1;
+            padding: 0 10px;
+        }
+        .croquis-signature-line .signature-line {
+            border-bottom: 1px dotted #000;
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+        }
+        .croquis-signature-line .label {
+            font-size: 9pt;
+            text-align: center;
+        }
+
+        /* Estilos para el texto descriptivo */
+        .description-box {
+            border: 1px solid #000;
+            padding: 10px;
+            min-height: 80px; /* Altura mínima para la descripción */
+            margin-top: 10px;
+            font-size: 10pt;
+        }
+
+        /* Estilos para intervención */
+        .intervencion-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .intervencion-field {
+            border-bottom: 1px dotted #999;
+            padding-bottom: 2px;
+            font-size: 10pt;
+        }
+        .intervencion-field strong {
+            font-weight: bold;
+        }
+
+        /* Estilos para los botones de acción (ocultos en impresión) */
+        .print-actions {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .print-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .print-button:hover {
+            background-color: #0056b3;
+        }
+        .back-button {
+            background-color: #6c757d;
+        }
+        .back-button:hover {
+            background-color: #5a6268;
+        }
+
+        /* MEDIA QUERY PARA IMPRESIÓN */
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+                font-size: 11pt; /* Asegura el tamaño de fuente para impresión */
+                -webkit-print-color-adjust: exact; /* Para imprimir colores de fondo */
+                print-color-adjust: exact;
+            }
+            .report-container {
+                width: auto; /* Se ajusta al tamaño de la página de impresión */
+                min-height: auto;
+                box-shadow: none;
+                margin: 0;
+                padding: 2.5cm; /* Mantener los márgenes */
+            }
+            .print-actions, .header, .footer { /* Ocultar elementos no deseados */
+                display: none;
+            }
+            /* Asegura que los bordes de las tablas se impriman */
+            .list-table th, .list-table td {
+                border: 1px solid #000 !important;
+            }
+            /* Eliminar líneas punteadas si no se desean en impresión */
+            .data-table .field-value {
+                border-bottom: none;
+            }
+            .intervencion-field {
+                border-bottom: none;
+            }
+            /* Si necesitas saltos de página específicos */
+            .section {
+                page-break-inside: avoid; /* Evita que las secciones se corten en medio */
+            }
+            .page-break {
+                page-break-before: always; /* Fuerza un salto de página antes de este elemento */
+            }
+        }

@@ -1,0 +1,373 @@
+/* public/css/Proteccion/tabs/anexo5.css */
+/* CSS con mayor especificidad para override Bootstrap - Anexo N°5 */
+
+/* Estilos para el título principal */
+.tab-pane#anexo5 h4,
+#anexo5 h4 {
+    grid-column: 1 / -1 !important;
+    font-size: 1.4rem !important;
+    font-weight: 700 !important;
+    color: white !important;
+    margin-bottom: 20px !important;
+    padding: 15px 20px !important;
+    background: linear-gradient(135deg, #9b2c2c, #e53e3e) !important;
+    border-radius: 8px !important;
+    text-align: center !important;
+    box-shadow: 0 2px 8px rgba(155, 44, 44, 0.3) !important;
+    border: none !important;
+}
+
+/* Estilos generales para el formulario de anexo 5 */
+.tab-pane#anexo5.active {
+    padding: 30px !important;
+    background-color: #ffffff !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+    display: block !important;
+}
+
+/* Container principal de anexos */
+.tab-pane#anexo5 #anexo5-container,
+#anexo5 #anexo5-container {
+    margin-bottom: 25px !important;
+}
+
+/* Estilos para cada grupo de anexo N5 */
+.tab-pane#anexo5 .anexo5-group,
+#anexo5 .anexo5-group {
+    background-color: #f8f9fa !important;
+    border: 2px solid #e2e8f0 !important;
+    border-radius: 12px !important;
+    padding: 25px !important;
+    margin-bottom: 20px !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05) !important;
+    transition: all 0.3s ease !important;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 20px !important;
+}
+
+.tab-pane#anexo5 .anexo5-group:hover,
+#anexo5 .anexo5-group:hover {
+    border-color: #9b2c2c !important;
+    box-shadow: 0 4px 15px rgba(155, 44, 44, 0.1) !important;
+}
+
+/* Título de cada grupo (Anexo N5) */
+.tab-pane#anexo5 .anexo5-group h5,
+#anexo5 .anexo5-group h5 {
+    grid-column: 1 / -1 !important;
+    color: #9b2c2c !important;
+    font-weight: 700 !important;
+    font-size: 1.2rem !important;
+    margin-bottom: 20px !important;
+    padding-bottom: 10px !important;
+    border-bottom: 2px solid #e2e8f0 !important;
+    text-align: center !important;
+}
+
+/* Estilos para cada grupo de label e input/textarea dentro de anexos */
+.tab-pane#anexo5 .anexo5-group > div,
+#anexo5 .anexo5-group > div {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    margin-bottom: 0 !important;
+}
+
+/* Estilos para las etiquetas (labels) */
+.tab-pane#anexo5 label,
+#anexo5 label {
+    font-weight: 600 !important;
+    color: #4a5568 !important;
+    font-size: 0.95rem !important;
+    margin-bottom: 5px !important;
+}
+
+/* Estilos para los campos de entrada */
+.tab-pane#anexo5 input[type="text"],
+.tab-pane#anexo5 input[type="date"],
+.tab-pane#anexo5 textarea,
+#anexo5 input[type="text"],
+#anexo5 input[type="date"],
+#anexo5 textarea {
+    width: 100% !important;
+    padding: 12px 15px !important;
+    border: 1px solid #cbd5e0 !important;
+    border-radius: 8px !important;
+    font-size: 1rem !important;
+    color: #2d3748 !important;
+    background-color: #ffffff !important;
+    transition: all 0.3s ease !important;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+    height: auto !important;
+    line-height: normal !important;
+    resize: vertical !important;
+}
+
+/* Estilos específicos para textarea */
+.tab-pane#anexo5 textarea,
+#anexo5 textarea {
+    min-height: 80px !important;
+    font-family: inherit !important;
+    line-height: 1.5 !important;
+}
+
+/* Campos deshabilitados (funcionario) */
+.tab-pane#anexo5 input[disabled],
+#anexo5 input[disabled] {
+    background-color: #f7fafc !important;
+    color: #718096 !important;
+    cursor: not-allowed !important;
+    border-color: #e2e8f0 !important;
+}
+
+/* Estados de focus para los campos */
+.tab-pane#anexo5 input:focus,
+.tab-pane#anexo5 textarea:focus,
+#anexo5 input:focus,
+#anexo5 textarea:focus {
+    border-color: #9b2c2c !important;
+    box-shadow: 0 0 0 3px rgba(155, 44, 44, 0.2) !important;
+    outline: none !important;
+    background-color: #ffffff !important;
+}
+
+/* Campos deshabilitados no deben tener focus */
+.tab-pane#anexo5 input[disabled]:focus,
+#anexo5 input[disabled]:focus {
+    border-color: #e2e8f0 !important;
+    box-shadow: none !important;
+}
+
+/* Botón para agregar anexo */
+.tab-pane#anexo5 button[onclick="agregarAnexo5()"],
+#anexo5 button[onclick="agregarAnexo5()"] {
+    background: linear-gradient(135deg, #38a169, #48bb78) !important;
+    color: white !important;
+    padding: 12px 25px !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 8px rgba(56, 161, 105, 0.2) !important;
+    margin-bottom: 25px !important;
+    text-decoration: none !important;
+}
+
+.tab-pane#anexo5 button[onclick="agregarAnexo5()"]:hover,
+#anexo5 button[onclick="agregarAnexo5()"]:hover {
+    background: linear-gradient(135deg, #48bb78, #38a169) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(56, 161, 105, 0.3) !important;
+}
+
+/* Botón para eliminar anexo */
+.tab-pane#anexo5 button[onclick*="removeAnexo5"],
+#anexo5 button[onclick*="removeAnexo5"] {
+    background: linear-gradient(135deg, #e53e3e, #c53030) !important;
+    color: white !important;
+    width: 200px;
+    height: 45px;
+    border: none !important;
+    border-radius: 6px !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 6px rgba(229, 62, 62, 0.2) !important;
+    margin-top: 80px !important;
+    margin-left: 110px;
+    text-decoration: none !important;
+}
+
+.tab-pane#anexo5 button[onclick*="removeAnexo5"]:hover,
+#anexo5 button[onclick*="removeAnexo5"]:hover {
+    background: linear-gradient(135deg, #c53030, #e53e3e) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 10px rgba(229, 62, 62, 0.3) !important;
+}
+
+/* Contenedor de navegación */
+.tab-pane#anexo5 div[style*="justify-content: space-between"],
+#anexo5 div[style*="justify-content: space-between"] {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding-top: 20px !important;
+    border-top: 1px solid #edf2f7 !important;
+    gap: 15px !important;
+    margin-top: 20px !important;
+}
+
+/* Mensaje informativo al final */
+.tab-pane#anexo5 p,
+#anexo5 p {
+    background-color: #ebf8ff !important;
+    border: 1px solid #bee3f8 !important;
+    border-radius: 8px !important;
+    padding: 15px !important;
+    margin-top: 20px !important;
+    color: #2b6cb0 !important;
+    font-weight: 500 !important;
+    text-align: center !important;
+}
+
+.tab-pane#anexo5 p strong,
+#anexo5 p strong {
+    color: #1a365d !important;
+}
+
+/* Estilos especiales para campos específicos */
+.tab-pane#anexo5 input[name*="[numero]"],
+#anexo5 input[name*="[numero]"] {
+    max-width: 200px !important;
+}
+
+.tab-pane#anexo5 input[name*="[fecha]"],
+#anexo5 input[name*="[fecha]"] {
+    max-width: 200px !important;
+}
+
+/* Override específico para clases de Bootstrap que puedan interferir */
+.tab-pane#anexo5 .form-control,
+#anexo5 .form-control {
+    padding: 12px 15px !important;
+    border: 1px solid #cbd5e0 !important;
+    border-radius: 8px !important;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+}
+
+.tab-pane#anexo5 .form-control:focus,
+#anexo5 .form-control:focus {
+    border-color: #9b2c2c !important;
+    box-shadow: 0 0 0 3px rgba(155, 44, 44, 0.2) !important;
+}
+
+.tab-pane#anexo5 .btn,
+#anexo5 .btn {
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Estilos para campos de texto largo (textarea) */
+.tab-pane#anexo5 textarea[name*="accion_realizada"],
+.tab-pane#anexo5 textarea[name*="resultado_obtenido"],
+#anexo5 textarea[name*="accion_realizada"],
+#anexo5 textarea[name*="resultado_obtenido"] {
+    grid-column: 1 / -1 !important;
+    min-height: 100px !important;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .tab-pane#anexo5.active {
+        padding: 20px !important;
+    }
+
+    .tab-pane#anexo5 .anexo5-group,
+    #anexo5 .anexo5-group {
+        grid-template-columns: 1fr !important;
+        padding: 20px !important;
+        gap: 15px !important;
+    }
+
+    .tab-pane#anexo5 div[style*="justify-content: space-between"],
+    #anexo5 div[style*="justify-content: space-between"] {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 10px !important;
+    }
+
+    .tab-pane#anexo5 button,
+    #anexo5 button {
+        width: 100% !important;
+    }
+
+    /* Campos específicos ocupan todo el ancho en móvil */
+    .tab-pane#anexo5 input[name*="[numero]"],
+    .tab-pane#anexo5 input[name*="[fecha]"],
+    #anexo5 input[name*="[numero]"],
+    #anexo5 input[name*="[fecha]"] {
+        max-width: 100% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .tab-pane#anexo5.active {
+        padding: 15px !important;
+    }
+
+    .tab-pane#anexo5 .anexo5-group,
+    #anexo5 .anexo5-group {
+        padding: 15px !important;
+        gap: 12px !important;
+    }
+
+    .tab-pane#anexo5 .anexo5-group h5,
+    #anexo5 .anexo5-group h5 {
+        font-size: 1.1rem !important;
+        margin-bottom: 15px !important;
+    }
+
+    .tab-pane#anexo5 input,
+    .tab-pane#anexo5 textarea,
+    #anexo5 input,
+    #anexo5 textarea {
+        padding: 10px 12px !important;
+        font-size: 0.95rem !important;
+    }
+
+    .tab-pane#anexo5 textarea,
+    #anexo5 textarea {
+        min-height: 70px !important;
+    }
+}
+
+/* Override específico para elementos de Bootstrap Grid */
+.tab-pane#anexo5 .row,
+.tab-pane#anexo5 .col,
+.tab-pane#anexo5 .col-*,
+#anexo5 .row,
+#anexo5 .col,
+#anexo5 .col-* {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Asegurar que los elementos flex funcionen correctamente */
+.tab-pane#anexo5 .d-flex,
+#anexo5 .d-flex {
+    display: flex !important;
+}
+
+.tab-pane#anexo5 .justify-content-between,
+#anexo5 .justify-content-between {
+    justify-content: space-between !important;
+}
+
+/* Estilos adicionales para mejorar la experiencia visual */
+.tab-pane#anexo5 input[type="hidden"],
+#anexo5 input[type="hidden"] {
+    display: none !important;
+}
+
+/* Animación suave para elementos que se agregan dinámicamente */
+.tab-pane#anexo5 .anexo5-group,
+#anexo5 .anexo5-group {
+    animation: fadeIn 0.3s ease-in-out !important;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

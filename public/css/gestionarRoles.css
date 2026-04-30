@@ -1,0 +1,606 @@
+/* DASHBOARD */
+.buscador{
+    padding-top: 30px;
+    width: 100%;
+    padding-left: 30px;
+}
+.input-group-text{
+        background-color: #E53E3E;
+}
+/* Estilos para el Admin Dashboard */
+.card-header{
+    background-color: #FFB500;
+    color: white;
+    height: 60px;
+}
+/* Estilos de las tarjetas de estadísticas */
+.sales-card {
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden; /* Asegura que los gradientes y sombras se vean bien */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.sales-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.sales-card .card-body {
+    padding: 20px;
+    color: #fff; /* Texto blanco para tarjetas con fondo de color */
+}
+
+.sales-card .card-text {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+.sales-card .num-text {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+/* Iconos de contador en las tarjetas */
+.counter-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8em;
+    margin-bottom: 10px; /* Espacio entre icono y texto/número si cambias el layout */
+}
+
+/* Gradientes para los iconos y tarjetas */
+.bg-primary-gradient {
+    background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+}
+.bg-gradient-primary {
+    background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+}
+.box-shadow-primary {
+    box-shadow: 0 5px 15px rgba(106, 17, 203, 0.4);
+}
+
+.bg-success-gradient {
+    background: linear-gradient(to right, #1d976c 0%, #93f9b9 100%);
+}
+.bg-gradient-success {
+    background: linear-gradient(to right, #1d976c 0%, #93f9b9 100%);
+}
+.box-shadow-success {
+    box-shadow: 0 5px 15px rgba(29, 151, 108, 0.4);
+}
+
+.bg-warning-gradient {
+    background: linear-gradient(to right, #f7b731 0%, #f7d431 100%);
+}
+.bg-gradient-warning {
+    background: linear-gradient(to right, #f7b731 0%, #f7d431 100%);
+}
+.box-shadow-warning {
+    box-shadow: 0 5px 15px rgba(247, 183, 49, 0.4);
+}
+
+.bg-danger-gradient {
+    background: linear-gradient(to right, #ee0979 0%, #ff6a00 100%);
+}
+.bg-gradient-danger {
+    background: linear-gradient(to right, #ee0979 0%, #ff6a00 100%);
+}
+.box-shadow-danger {
+    box-shadow: 0 5px 15px rgba(238, 9, 121, 0.4);
+}
+
+/* Estilos de la tabla de usuarios */
+#usersTable {
+    width: 100% !important; /* Asegura que DataTables ocupe todo el ancho */
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+#usersTable th,
+#usersTable td {
+    padding: 12px 15px;
+    border: 1px solid #e9ecef;
+    vertical-align: middle;
+}
+
+#usersTable thead th {
+    background-color: #f2f4f7;
+    color: #495057;
+    font-weight: 600;
+    text-align: left;
+}
+
+#usersTable tbody tr:nth-child(even) {
+    background-color: #fdfdfd;
+}
+
+#usersTable tbody tr:hover {
+    background-color: #e6f7ff; /* Ligero hover para filas */
+}
+
+/* Badges de estado y rol */
+.badge {
+    padding: 0.4em 0.7em;
+    border-radius: 0.25rem;
+    font-size: 0.75em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.badge.bg-info {
+    background-color: #17a2b8 !important;
+    color: #fff;
+}
+.badge.bg-success {
+    background-color: #28a745 !important;
+    color: #fff;
+}
+.badge.bg-danger {
+    background-color: #dc3545 !important;
+    color: #fff;
+}
+.badge.bg-warning {
+    background-color: #ffc107 !important;
+    color: #212529; /* Texto oscuro para fondo claro */
+}
+.badge.bg-secondary {
+    background-color: #6c757d !important;
+    color: #fff;
+}
+
+/* Botones de acción en la tabla */
+.btn-group .btn {
+    margin-right: 5px;
+    border-radius: 5px;
+    font-size: 0.85em;
+    padding: 6px 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-group .btn i {
+    margin-right: 5px;
+}
+
+/* Estilos para el modal personalizado (reemplazo de confirm) */
+.custom-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050; /* Bootstrap modal backdrop z-index is 1040 */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.custom-modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.custom-modal {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    padding: 25px;
+    width: 90%;
+    max-width: 450px;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease-in-out;
+}
+
+.custom-modal-overlay.show .custom-modal {
+    transform: translateY(0);
+}
+
+.custom-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.custom-modal-header h5 {
+    margin: 0;
+    font-size: 1.25em;
+    color: #343a40;
+}
+
+.custom-modal-body {
+    margin-bottom: 20px;
+    color: #6c757d;
+}
+
+.custom-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* Utility classes */
+.text-center {
+    text-align: center;
+}
+.text-muted {
+    color: #6c757d !important;
+}
+.spinner-border {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    vertical-align: -0.125em;
+    border: 0.25em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    -webkit-animation: .75s linear infinite spinner-border;
+    animation: .75s linear infinite spinner-border;
+}
+@keyframes spinner-border {
+    to { transform: rotate(360deg); }
+}
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0,0,0,0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+/* GESTIONAR ROLES */
+/* Variables CSS para colores Bootstrap/Tailwind-like (sin la paleta personalizada) */
+:root {
+    --bs-primary: #6a11cb; /* Color primario de tu dashboard */
+    --bs-blue-500: #3b82f6;
+    --bs-blue-700: #1d4ed8;
+    --bs-indigo-600: #4f46e5;
+    --bs-indigo-900: #3730a3;
+    --bs-green-100: #d1fae5;
+    --bs-green-500: #10b981;
+    --bs-green-700: #047857;
+    --bs-green-800: #065f46;
+    --bs-red-100: #fee2e2;
+    --bs-red-500: #ef4444;
+    --bs-red-600: #dc2626;
+    --bs-red-700: #b91c1c;
+    --bs-red-800: #991b1b;
+    --bs-red-900: #7f1d1d;
+    --bs-gray-50: #f9fafb;
+    --bs-gray-100: #f3f4f6;
+    --bs-gray-200: #e5e7eb;
+    --bs-gray-400: #9ca3af;
+    --bs-gray-500: #6b7280;
+    --bs-gray-600: #4b5563;
+    --bs-gray-700: #374151;
+    --bs-gray-800: #1f2937;
+    --bs-gray-900: #111827;
+
+    /* Colores de texto y fondo generales */
+    --color-text-dark: #343a40;
+    --color-text-muted: #6c757d;
+    --color-white: #ffffff;
+}
+
+/* Contenedor principal */
+.roles-container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* Encabezado de la página */
+.roles-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.roles-header h1 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    color: var(--bs-gray-800);
+}
+
+/* Botón "Agregar Nuevo Rol" */
+.btn-add-role {
+    background-color: var(--bs-blue-500);
+    color: var(--color-white);
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    border: none;
+}
+
+.btn-add-role:hover {
+    background-color: var(--bs-blue-700);
+}
+
+.btn-add-role i {
+    margin-right: 0.5rem;
+    color: inherit;
+}
+
+/* Mensajes de sesión (Alertas) */
+.session-alert {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left-width: 4px;
+    border-radius: 0.375rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.session-alert p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.session-alert .font-bold {
+    font-weight: 700;
+}
+
+.session-alert.success {
+    background-color: var(--bs-green-100);
+    border-color: var(--bs-green-500);
+    color: var(--bs-green-700);
+}
+
+.session-alert.error {
+    background-color: var(--bs-red-100);
+    border-color: var(--bs-red-500);
+    color: var(--bs-red-700);
+}
+
+/* Contenedor de la tabla */
+.table-card {
+    background-color: var(--color-white);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+/* Estilos de la tabla */
+.roles-table {
+    width: 100%;
+    table-layout: fixed; /* Crucial para anchos de columna fijos */
+    border-collapse: collapse;
+}
+
+.roles-table thead {
+    background-color: var(--bs-gray-100);
+}
+
+.roles-table th {
+    padding: 0.75rem 0.5rem; /* Ajustado el padding horizontal para más espacio */
+    text-align: left;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
+    color: var(--bs-gray-600);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--bs-gray-200);
+    white-space: normal; /* Permitir que el texto del encabezado se envuelva */
+    word-break: break-word; /* Romper palabras largas si es necesario */
+}
+
+/* Anchos específicos para cada columna */
+.roles-table th:nth-child(1), .roles-table td:nth-child(1) { width: 5%; } /* ID */
+.roles-table th:nth-child(2), .roles-table td:nth-child(2) { width: 15%; } /* Nombre del Rol */
+.roles-table th:nth-child(3), .roles-table td:nth-child(3) { width: 25%; } /* Descripción (más ancha) */
+.roles-table th:nth-child(4), .roles-table td:nth-child(4) { width: 15%; text-align: center; } /* Permisos Asignados */
+.roles-table th:nth-child(5), .roles-table td:nth-child(5) { width: 15%; text-align: center; } /* Usuarios con este Rol */
+.roles-table th:nth-child(6), .roles-table td:nth-child(6) { width: 10%; text-align: center; } /* Estado */
+.roles-table th:nth-child(7), .roles-table td:nth-child(7) { width: 15%; text-align: center; } /* Acciones (más ancha para botones) */
+
+
+.roles-table tbody {
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--bs-gray-200);
+}
+
+.roles-table tbody tr {
+    transition: background-color 150ms ease-in-out;
+}
+
+.roles-table tbody tr:hover {
+    background-color: var(--bs-gray-50);
+}
+
+.roles-table td {
+    padding: 1rem 0.5rem; /* Ajustado el padding horizontal para más espacio */
+    white-space: normal; /* Permitir que el texto se envuelva */
+    word-break: break-word; /* Romper palabras largas */
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: var(--bs-gray-700);
+    border-bottom: 1px solid var(--bs-gray-200);
+}
+
+.roles-table td.font-medium {
+    font-weight: 500;
+    color: var(--bs-gray-900);
+}
+
+/* La clase truncate ya no es estrictamente necesaria con white-space: normal, pero la mantengo por si acaso */
+.roles-table td.truncate {
+    /* max-width: 12.5rem; */ /* Comentado, ya que el width de la columna lo maneja */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.roles-table td.text-gray-500 {
+    color: var(--bs-gray-500);
+}
+
+/* Badges de estado */
+.badge-status {
+    padding: 0.25rem 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    white-space: nowrap;
+}
+
+.badge-status.active {
+    background-color: var(--bs-green-100);
+    color: var(--bs-green-800);
+}
+
+.badge-status.inactive {
+    background-color: var(--bs-red-100);
+    color: var(--bs-red-800);
+}
+
+/* Botones de acción en la tabla */
+.action-btn {
+    transition: all 150ms ease-in-out;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem; /* Ajustado para ser un poco más pequeño */
+    height: 2.2rem; /* Ajustado para ser un poco más pequeño */
+    border-radius: 0.375rem;
+    border: 1px solid transparent;
+    vertical-align: middle; /* Ayuda a alinear con el texto de la celda si lo hubiera */
+    margin: 0 0.2rem; /* Margen más pequeño entre botones */
+}
+
+.action-btn.edit {
+    color: var(--bs-indigo-600);
+    /* margin-right: 0.75rem; */ /* Manejado por margin en .action-btn */
+}
+
+.action-btn.edit:hover {
+    color: var(--bs-indigo-900);
+    background-color: rgba(79, 70, 229, 0.1);
+}
+
+.action-btn.delete {
+    color: var(--bs-red-600);
+}
+
+.action-btn.delete:hover {
+    color: var(--bs-red-900);
+    background-color: rgba(220, 38, 38, 0.1);
+}
+
+.action-btn.disabled {
+    color: var(--bs-gray-400);
+    cursor: not-allowed;
+    pointer-events: none;
+    background-color: transparent;
+}
+
+/* Font Awesome Icon specific styles to ensure they display */
+/* ESTO ES CRUCIAL PARA QUE FONT AWESOME RENDERICE SUS GLIFOS */
+.fas {
+    font-family: "Font Awesome 6 Free"; /* Asegura la fuente correcta */
+    font-weight: 900; /* Para iconos sólidos */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block; /* Esencial para el renderizado adecuado */
+    font-style: normal; /* Anula el estilo predeterminado de cursiva */
+    font-variant: normal; /* Anula la variante predeterminada */
+    text-rendering: auto; /* Optimiza para la legibilidad */
+    line-height: 1; /* Ajusta la altura de línea para la alineación */
+    color: inherit; /* Hereda el color del padre .action-btn */
+}
+
+.fa-lg {
+    font-size: 1.33333333em;
+    line-height: 0.75em;
+    vertical-align: -0.0667em;
+}
+
+
+/* Estilos para el modal personalizado (SweetAlert2) */
+.swal2-popup {
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.swal2-title {
+    color: var(--color-text-dark);
+}
+
+.swal2-html-container {
+    color: var(--color-text-muted);
+}
+
+.swal2-confirm.swal2-styled {
+    background-color: var(--bs-red-600) !important;
+}
+
+.swal2-cancel.swal2-styled {
+    background-color: var(--bs-indigo-600) !important;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Utility classes (si no se manejan globalmente) */
+.d-inline {
+    display: inline !important;
+}
+.d-inline-flex {
+    display: inline-flex !important;
+}
+.text-center {
+    text-align: center !important;
+}
+.text-muted {
+    color: var(--color-text-muted) !important;
+}
+
+/* Estilos específicos para page-header h1 para anular posibles conflictos con roles-header h1 */
+.page-header .page-title {
+    font-size: 2.2em;
+    text-align: left;
+    margin-bottom: 0;
+}
+
+/* Asegurar que el `page-title` en `roles-header` sea más pequeño según el Tailwind original */
+.roles-header .page-title {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    color: var(--bs-gray-800);
+}

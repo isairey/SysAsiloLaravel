@@ -1,0 +1,251 @@
+/* public/css/Medico/registrarAtencionEnfermeria.css - Estilos para el formulario de registro de atención de enfermería */
+
+/* Definición de variables de color y sombra para consistencia corporativa */
+:root {
+    --color-primary: #9B2C2C;
+    --color-secondary: #FFB500;
+    --color-accent: #E53E3E;
+    --color-light: #F8F9FA;
+    --color-gray: #6C757D;
+    --color-dark: #343A40;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+/* Estilos para el cuerpo (fondo general) */
+body {
+    background: linear-gradient(135deg, var(--color-light) 0%, #e9ecef 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para el contenedor principal del formulario */
+.container1 {
+    margin-left: 250px; /* Espacio para el sidebar */
+    transition: margin-left 0.3s ease;
+    padding: 20px;
+    background: white;
+    border-radius: 15px 0 0 0;
+    box-shadow: var(--shadow-lg);
+    min-height: auto;
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Responsivo para cuando el sidebar se colapsa */
+@media (max-width: 1200px) {
+    .container1 {
+        margin-left: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container1 {
+        margin-left: 0;
+        padding: 15px;
+        border-radius: 0;
+    }
+}
+
+/* Estilos para el título principal */
+h6 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #9b2c2c, #e53e3e);
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3); /* Sombra basada en primary */
+}
+
+/* Estilos para los subtítulos dentro del formulario */
+.form-section h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-top: 25px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--color-secondary);
+}
+
+/* Estilos para la sección del formulario que contendrá los campos */
+.form-section {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    margin-top: 20px;
+}
+
+/* Estilos para cada grupo de label e input/select */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Estilos para etiquetas (labels) */
+.form-group label {
+    font-weight: 600;
+    color: var(--color-dark);
+    font-size: 0.95rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Estilos para campos de entrada, textarea y select */
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group textarea,
+.form-group .read-only-field {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #2d3748;
+    background-color: #f7fafc;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+}
+
+/* Estilo específico para campos de solo lectura */
+.form-group .read-only-field {
+    background-color: #ebf1f6;
+    border: 1px solid #c2d9e0;
+    color: #495057;
+    cursor: default;
+}
+
+/* Estilos al enfocar inputs */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2); /* Sutil resplandor basado en primary */
+    outline: none;
+    background-color: #ffffff;
+}
+
+/* Mensajes de éxito y error */
+.alert-success {
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+    font-size: 0.95rem;
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    border-left: 4px solid #155724;
+}
+
+.general-error-container1 {
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+    font-size: 0.95rem;
+    background: linear-gradient(135deg, var(--color-accent), #dc3545);
+    color: white;
+    border-left: 4px solid #721c24;
+}
+.general-error-container1 ul {
+    margin: 0;
+    padding-left: 20px;
+}
+.general-error-container1 h6 {
+    text-align: left;
+    background: none;
+    color: white;
+    padding: 0;
+    margin-bottom: 10px;
+    box-shadow: none;
+    border-bottom: none;
+    font-size: 1.1rem;
+}
+.error-message {
+    color: #ff4d4d;
+    font-size: 0.85em;
+    margin-top: 5px;
+    display: block;
+}
+.is-invalid {
+    border-color: #ff4d4d !important;
+}
+
+/* Botones de navegación (Volver y Guardar) */
+.navigation-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding-top: 20px;
+    border-top: 1px solid #edf2f7;
+    margin-top: 30px;
+}
+
+.navigation-buttons a.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--color-gray) !important;
+    color: white;
+    margin-right: 85%;
+    margin-bottom: 15px;
+}
+.navigation-buttons a.btn:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.navigation-buttons button.btn-primary {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent) )!important;  /* Degradado para el botón principal */
+    color: white !important;
+    width: 200px; /* Ancho específico */
+}
+
+.navigation-buttons button.btn-primary:hover {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent) )!important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 200px;
+}
+
+/* Iconos dentro de botones */
+.navigation-buttons i {
+    margin-right: 8px;
+}
+
+/* Animación de entrada para el contenedor */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

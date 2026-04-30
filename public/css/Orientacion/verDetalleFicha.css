@@ -1,0 +1,359 @@
+/* public/css/Orientacion/verDetalleOrientacion.css */
+
+/* Paleta de colores corporativa */
+:root {
+    --empresa-primary: #9B2C2C;
+    --empresa-primary-light: rgba(155, 44, 44, 0.1);
+    --empresa-secondary: #FFB500;
+    --empresa-secondary-light: rgba(255, 181, 0, 0.1);
+    --empresa-accent: #E53E3E;
+    --empresa-accent-light: rgba(229, 62, 62, 0.1);
+    --text-primary: #2d3748;
+    --text-secondary: #4a5568;
+    --border-color: #e2e8f0;
+    --background-light: #f8fafc;
+    --background-white: #ffffff;
+    --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Estilos para el título principal */
+h1.page-title { /* Selector más específico para el título de la página */
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, var(--empresa-primary), var(--empresa-accent));
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(155, 44, 44, 0.3);
+}
+
+/* Ajuste para pantallas más pequeñas si el h1 se vuelve más pequeño */
+@media (max-width: 768px) {
+    h1.page-title {
+        font-size: 1.2rem;
+        padding: 12px 15px;
+    }
+}
+
+/* Estructura principal */
+.orientacion-header { /* Cambiado de proteccion-header */
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Tarjeta principal */
+.orientacion-card { /* Cambiado de proteccion-card */
+    border: none;
+    border-radius: 12px;
+    box-shadow: var(--shadow-medium);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.orientacion-card:hover { /* Cambiado de proteccion-card */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-header.bg-empresa-primary {
+    background: linear-gradient(135deg, var(--empresa-primary), #C53A3A) !important;
+    padding: 20px 25px;
+    border-bottom: none;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.badge.bg-empresa-secondary {
+    background-color: var(--empresa-secondary) !important;
+    color: #212529 !important;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Contenedor de detalles - Ajustado para una sola columna */
+.orientacion-detail-container { /* Cambiado de caso-detail-container */
+    display: block; /* Vuelve a ser un bloque normal */
+    padding: 20px 0;
+}
+
+/* Acordeones */
+.accordion {
+    --bs-accordion-border-color: var(--border-color);
+    --bs-accordion-border-radius: 10px;
+    --bs-accordion-inner-border-radius: 10px;
+    --bs-accordion-active-bg: var(--empresa-primary-light);
+    --bs-accordion-btn-color: var(--text-primary);
+    --bs-accordion-btn-active-color: var(--empresa-primary);
+}
+
+.accordion-item {
+    border: none; /* Quitamos el borde del item para usar el de detail-section */
+    margin-bottom: 20px; /* Espacio entre items de acordeón */
+}
+
+.accordion-header {
+    margin-bottom: 0;
+}
+
+.accordion-button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 25px; /* Ajusta el padding para que coincida con detail-section */
+    font-size: 1.3rem; /* Tamaño de fuente para el título del acordeón */
+    font-weight: 600;
+    background-color: var(--background-white);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--empresa-primary); /* Mantener el borde lateral */
+    color: var(--text-primary); /* Color de texto por defecto */
+    text-align: left;
+    position: relative; /* Para el icono de chevron */
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--empresa-primary-light);
+    color: var(--empresa-primary);
+    box-shadow: none;
+    border-color: var(--empresa-primary);
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(155, 44, 44, 0.25); /* Sombra de foco */
+    outline: 0;
+}
+
+.accordion-button .section-icon {
+    margin-right: 15px;
+    flex-shrink: 0; /* Evita que el icono se encoja */
+}
+
+.accordion-button .section-title {
+    flex-grow: 1; /* Permite que el título ocupe el espacio restante */
+    margin: 0; /* Quita el margen inferior del título dentro del botón */
+    color: inherit; /* Hereda el color del botón */
+}
+
+.accordion-button::after { /* Ocultamos el icono por defecto de Bootstrap */
+    display: none;
+}
+
+.accordion-icon { /* Usamos nuestro propio icono de Feather */
+    margin-left: auto; /* Mueve el icono a la derecha */
+    transition: transform 0.3s ease-in-out;
+}
+
+.accordion-button:not(.collapsed) .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.accordion-collapse {
+    border-top: none; /* Quitamos el borde superior del cuerpo del acordeón */
+}
+
+.accordion-body {
+    padding: 20px 25px 0 25px; /* Ajusta el padding para que el contenido no quede pegado */
+    background-color: var(--background-white);
+    border-radius: 0 0 10px 10px; /* Redondea solo las esquinas inferiores */
+}
+
+/* Originales `detail-section` pero ahora aplicados al `accordion-item` para el card look */
+.detail-section {
+    background-color: var(--background-white);
+    border-radius: 10px; /* Se aplica al accordion-item */
+    box-shadow: var(--shadow-light);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.detail-section:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Animación para resaltar secciones */
+@keyframes highlight {
+    0% { box-shadow: 0 0 0 0 rgba(155, 44, 44, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(155, 44, 44, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(155, 44, 44, 0); }
+}
+
+.highlight-section {
+    animation: highlight 2s ease;
+}
+
+/* Títulos de sección - se usan dentro de accordion-button */
+.section-header {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.section-icon { /* Usado dentro del accordion-button */
+    background-color: var(--empresa-primary-light);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    color: var(--empresa-primary);
+    font-size: 1.2rem;
+}
+
+.section-title { /* Usado dentro del accordion-button */
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--empresa-primary); /* O color: inherit; para que tome el color del botón */
+    margin: 0;
+}
+
+/* Contenido de detalles */
+.detail-content { /* Se mantiene por si se usa en partials, aunque aquí usamos detail-group */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.detail-group {
+    background-color: var(--background-light);
+    border-radius: 8px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.detail-group:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.detail-row {
+    display: flex;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.detail-label {
+    flex: 0 0 40%;
+    font-weight: 600;
+    color: var(--empresa-primary);
+    padding-right: 15px;
+}
+
+.detail-value {
+    flex: 1;
+    color: var(--text-primary);
+    word-break: break-word;
+}
+
+/* Botones de acción */
+.orientacion-actions { /* Cambiado de proteccion-actions */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.export-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-empresa-primary {
+    background: linear-gradient(135deg, var(--empresa-primary), var(--empresa-accent)); /* Usando la variable accent */
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.btn-empresa-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(155, 44, 44, 0.3);
+    color: white;
+}
+
+.btn-empresa-secondary {
+    background: var(--empresa-secondary);
+    border: none;
+    color: #212529;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.btn-empresa-secondary:hover {
+    background-color: var(--empresa-primary); /* Un color de hover más consistente */
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-empresa-accent { /* Nuevo estilo para el botón de Exportar PDF */
+    background: linear-gradient(135deg, var(--empresa-accent), #FF8C00); /* Otro degradado o color de acento */
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.btn-empresa-accent:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(229, 62, 62, 0.3);
+    color: white;
+}
+
+/* Modal Styling (adaptado para tu paleta) */
+.modal-header.bg-empresa-primary {
+    background: linear-gradient(135deg, var(--empresa-primary), var(--empresa-accent)) !important;
+    color: white;
+}
+
+.modal-title {
+    color: white;
+}
+
+.btn-close.btn-close-white { /* Asegura que el botón de cerrar sea blanco */
+    filter: invert(1); /* Invierte el color para que sea blanco */
+    opacity: 1; /* Asegura que no esté transparente */
+}

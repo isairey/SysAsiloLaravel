@@ -1,0 +1,198 @@
+/* public/css/Orientacion/verReporte.css */
+
+/* General print settings */
+@page {
+    size: A4;
+    margin: 2.5cm; /* Default margins for A4 */
+}
+
+body {
+    font-family: 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Light background for screen view */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.report-container {
+    width: 21cm;
+    min-height: 29.7cm;
+    background-color: white;
+    padding: 2.5cm; /* Padding inside the A4 sheet area */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow for screen view */
+    margin: 20px 0; /* Margin outside the A4 sheet for screen view */
+    box-sizing: border-box;
+}
+
+.report-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 5px;
+}
+
+.report-header h1 {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    border-bottom: 2px solid black;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.report-section-inline {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+
+.field-group {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: nowrap;
+}
+
+.field-label {
+    font-weight: bold;
+    white-space: nowrap;
+    margin-right: 5px;
+    font-size: 0.9em;
+}
+
+.field-value {
+    flex-grow: 1;
+    border-bottom: 1px solid black;
+    padding-bottom: 2px;
+    font-size: 0.9em;
+    white-space: pre-wrap;
+    word-break: break-all;
+    min-width: 50px;
+}
+
+.field-group-wide {
+    width: 70%;
+    display: flex;
+    align-items: baseline;
+    margin-right: 10px;
+}
+
+.field-group-narrow {
+    width: 28%;
+    display: flex;
+    align-items: baseline;
+}
+
+.report-section-block {
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-weight: bold;
+    font-size: 0.95em;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.type-orientacion .section-title {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    text-decoration: underline;
+}
+
+.checkbox-group {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+.checkbox-box {
+    width: 15px;
+    height: 15px;
+    border: 1px solid black;
+    margin-right: 5px;
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+.checkbox-box.checked {
+    background-color: black;
+}
+
+.textarea-field {
+    border: 1px solid black;
+    padding: 5px;
+    min-height: 150px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-break: break-all;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.motivos-textarea {
+    min-height: 250px;
+}
+
+.resultados-textarea {
+    min-height: 250px;
+}
+
+.violence-note {
+    font-size: 0.8em;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    font-style: italic;
+}
+
+.signature-section {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.signature-block {
+    width: 45%;
+    border-top: 1px solid black;
+    padding-top: 5px;
+    font-size: 0.85em;
+    font-weight: bold;
+}
+
+/* Print-specific styles */
+@media print {
+    body {
+        background-color: white !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+        -webkit-print-color-adjust: exact !important; /* Ensure background colors are printed */
+        color-adjust: exact !important;
+        font-size: 12pt; /* Common print font size */
+    }
+    .report-container {
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 2.5cm !important; /* Force print margins */
+        min-height: auto !important; /* Allow height to adjust to content */
+    }
+    /* Hide elements not meant for print */
+    .no-print {
+        display: none !important;
+    }
+}

@@ -1,0 +1,332 @@
+/* public/css/Proteccion/tabs/croquis.css */
+
+/* Estilos generales para el tab de croquis */
+.tab-pane#croquis.active {
+    display: flex !important;
+    flex-direction: column;
+    gap: 25px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Estilos para el título principal */
+#croquis h4 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 25px;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #9b2c2c, #e53e3e);
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(155, 44, 44, 0.3);
+}
+
+/* Sección de datos del denunciante */
+#croquis > div:not([style*="margin-top: 1em"]):not([style*="margin-top: 20px"]) {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para las etiquetas (labels) */
+#croquis label {
+    font-weight: 600;
+    color: #4a5568;
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+}
+
+/* Estilos para los campos de entrada */
+#croquis input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #2d3748;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+#croquis input[type="text"]:focus {
+    border-color: #9b2c2c;
+    box-shadow: 0 0 0 3px rgba(155, 44, 44, 0.2);
+    outline: none;
+    background-color: #ffffff;
+}
+
+/* Contenedor de datos del denunciante */
+.denunciante-section {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Grid para los campos del denunciante */
+.denunciante-fields {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Estilos para la sección del croquis */
+.croquis-section {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.croquis-section label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* Contenedor de la imagen del croquis */
+.croquis-image-container {
+    border: 2px dashed #cbd5e0 !important;
+    background: linear-gradient(135deg, #f7fafc, #edf2f7) !important;
+    border-radius: 12px !important;
+    width: 100% !important;
+    max-width: 700px !important;
+    height: 350px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.croquis-image-container:hover {
+    border-color: #9b2c2c !important;
+    background: linear-gradient(135deg, #fef5e7, #fed7aa) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(155, 44, 44, 0.15);
+}
+
+.croquis-image-container img {
+    max-height: 90% !important;
+    max-width: 90% !important;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Overlay para la imagen */
+.croquis-image-container::before {
+    content: "Croquis del Domicilio";
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    background: rgba(155, 44, 44, 0.9);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    z-index: 1;
+}
+
+/* Contenedor de botones de navegación */
+.navigation-buttons {
+    display: flex !important;
+    justify-content: space-between !important;
+    gap: 15px;
+    padding-top: 20px;
+    border-top: 1px solid #edf2f7;
+    margin-top: 25px !important;
+}
+
+/* Estilos para los botones de navegación */
+button[onclick="backTab()"],
+button[onclick="nextTab()"] {
+    padding: 12px 25px !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Botón "Siguiente" */
+button[onclick="nextTab()"] {
+    background: linear-gradient(135deg, #9b2c2c, #e53e3e) !important;
+    color: white !important;
+}
+
+button[onclick="nextTab()"]:hover {
+    background: linear-gradient(135deg, #e53e3e, #9b2c2c) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(155, 44, 44, 0.3) !important;
+}
+
+/* Botón "Anterior" */
+button[onclick="backTab()"] {
+    background-color: #6c757d !important;
+    color: white !important;
+}
+
+button[onclick="backTab()"]:hover {
+    background-color: #5a6268 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Indicadores visuales */
+.field-group {
+    position: relative;
+}
+
+.field-group::before {
+    content: "";
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 60%;
+    background: linear-gradient(135deg, #9b2c2c, #e53e3e);
+    border-radius: 2px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.field-group:focus-within::before {
+    opacity: 1;
+}
+
+/* Efectos de hover en los campos */
+#croquis input[type="text"]:hover {
+    border-color: #f56565;
+    box-shadow: 0 2px 8px rgba(155, 44, 44, 0.1);
+}
+
+/* Animaciones de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#croquis.active > * {
+    animation: fadeInUp 0.4s ease-out;
+}
+
+#croquis.active > *:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+#croquis.active > *:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+#croquis.active > *:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .tab-pane#croquis.active {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    #croquis h4 {
+        font-size: 1.2rem;
+        padding: 12px 15px;
+    }
+
+    .denunciante-fields {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .denunciante-section,
+    .croquis-section {
+        padding: 20px;
+    }
+
+    .croquis-image-container {
+        height: 250px !important;
+        max-width: 100% !important;
+    }
+
+    .navigation-buttons {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 10px;
+    }
+
+    button[onclick="backTab()"],
+    button[onclick="nextTab()"] {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .croquis-image-container {
+        height: 200px !important;
+    }
+
+    .croquis-image-container::before {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+        top: 10px;
+        left: 15px;
+    }
+}
+
+/* Estados de carga y placeholder */
+.croquis-image-container.loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%) !important;
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Mejoras de accesibilidad */
+#croquis input[type="text"]:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

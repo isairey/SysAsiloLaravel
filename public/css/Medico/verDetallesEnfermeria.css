@@ -1,0 +1,351 @@
+/* public/css/Medico/verDetallesEnfermeria.css */
+
+/* Paleta de colores consistente con otros archivos (tomada de verDetallesHistoria.css) */
+:root {
+    --color-primary: #9B2C2C;
+    --color-secondary: #FFB500;
+    --color-accent: #E53E3E;
+    --color-light: #F8F9FA;
+    --color-gray: #6C757D;
+    --color-dark: #343A40;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 8px 15px rgba(0,0,0,0.1);
+
+    /* Variables específicas de acordeón Bootstrap, para personalización */
+    --bs-accordion-border-color: var(--border-color);
+    --bs-accordion-border-radius: 10px;
+    --bs-accordion-inner-border-radius: 10px;
+    --bs-accordion-active-bg: rgba(155, 44, 44, 0.1); /* light version of primary */
+    --bs-accordion-btn-color: var(--color-dark);
+    --bs-accordion-btn-active-color: var(--color-primary);
+
+    /* Adaptación de colores para Enfermería, COINCIDIENDO EXACTAMENTE con verDetallesHistoria.css */
+    --empresa-primary: var(--color-primary); /* #9B2C2C */
+    --empresa-primary-light: rgba(155, 44, 44, 0.1); /* rgba(var(--color-primary), 0.1) */
+    --empresa-secondary: var(--color-secondary); /* #FFB500 - ESTO ES CRÍTICO */
+    --empresa-secondary-light: rgba(255, 181, 0, 0.1); /* rgba(var(--color-secondary), 0.1) - ESTO ES CRÍTICO */
+    --empresa-accent: var(--color-accent); /* #E53E3E */
+    --empresa-accent-light: rgba(229, 62, 62, 0.1);
+    --text-primary: var(--color-dark);
+    --text-secondary: var(--color-gray);
+    --border-color: #e2e8f0;
+    --background-light: var(--color-light);
+    --background-white: #ffffff;
+}
+
+/* Estilos generales para el cuerpo (fondo general) */
+body {
+    background: linear-gradient(135deg, var(--color-light) 0%, #e9ecef 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para el título principal de la página */
+.page-title {
+    font-size: 1.6rem; /* Ajustado para coincidir con verDetallesHistoria.css */
+    font-weight: 700;
+    color: #2d3748; /* Text color for the heading background */
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    color: white; /* Text color should be white on this gradient */
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(155, 44, 44, 0.3);
+}
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 1.2rem;
+        padding: 12px 15px;
+    }
+}
+
+/* Estructura principal */
+.enfermeria-header { /* Renombrado para consistencia */
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Tarjeta principal */
+.enfermeria-card { /* Renombrado para consistencia */
+    border: none;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px; /* Consistencia con .card */
+}
+
+.enfermeria-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-header.bg-empresa-primary {
+    /* Usando las variables de color del :root para consistencia */
+    background: linear-gradient(135deg, var(--empresa-primary), var(--empresa-accent)) !important;
+    padding: 20px 25px;
+    border-bottom: none;
+    border-top-left-radius: 12px; /* Asegurar que mantenga el radio del card */
+    border-top-right-radius: 12px; /* Asegurar que mantenga el radio del card */
+}
+
+.card-title {
+    font-size: 1.4rem; /* Ajustado para el título de la tarjeta principal */
+    font-weight: 600;
+    color: white; /* El texto del card-header es blanco */
+}
+
+.badge.bg-empresa-secondary {
+    background-color: var(--empresa-secondary) !important; /* Will now be #FFB500 */
+    color: var(--text-primary) !important; /* Changed to dark text for contrast on yellow/orange */
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Contenedor de detalles */
+.enfermeria-detail-container { /* Renombrado para consistencia */
+    display: block;
+    padding: 20px 0;
+}
+
+/* Acordeones */
+.accordion {
+    --bs-accordion-border-color: var(--border-color);
+    --bs-accordion-border-radius: 10px;
+    --bs-accordion-inner-border-radius: 10px;
+    --bs-accordion-active-bg: var(--empresa-primary-light); /* light version of primary */
+    --bs-accordion-btn-color: var(--color-dark);
+    --bs-accordion-btn-active-color: var(--color-primary);
+}
+
+.accordion-item {
+    border: none;
+    margin-bottom: 20px;
+}
+
+.accordion-header {
+    margin-bottom: 0;
+}
+
+.accordion-button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 25px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    background-color: var(--background-white);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--color-primary);
+    color: var(--color-dark);
+    text-align: left;
+    position: relative;
+    box-shadow: var(--shadow-sm); /* Sombra para el botón del acordeón */
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--bs-accordion-active-bg);
+    color: var(--bs-accordion-btn-active-color);
+    box-shadow: none;
+    border-color: var(--color-primary);
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(155, 44, 44, 0.25);
+    outline: 0;
+}
+
+.accordion-button .section-icon {
+    margin-right: 15px;
+    flex-shrink: 0;
+    background-color: rgba(155, 44, 44, 0.1); /* light version of primary */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    font-size: 1.2rem;
+}
+
+.accordion-button .section-title {
+    flex-grow: 1;
+    margin: 0;
+    color: inherit;
+}
+
+.accordion-button::after {
+    display: none;
+}
+
+.accordion-icon {
+    margin-left: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.accordion-button:not(.collapsed) .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.accordion-collapse {
+    border-top: none;
+}
+
+.accordion-body {
+    padding: 20px 25px 0 25px;
+    background-color: var(--background-white);
+    border-radius: 0 0 10px 10px;
+}
+
+.detail-section { /* Aplicado al accordion-item */
+    background-color: var(--background-white);
+    border-radius: 10px;
+    box-shadow: var(--shadow-light);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.detail-section:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+}
+
+.detail-group {
+    background-color: var(--background-light);
+    border-radius: 8px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.detail-group:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.detail-row {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.detail-label {
+    flex: 0 0 30%; /* Etiqueta ocupa 30% del ancho */
+    font-weight: bold;
+    color: var(--color-primary);
+    padding-right: 15px;
+    word-break: break-word; /* Para manejar texto largo en la etiqueta */
+}
+
+.detail-value {
+    flex: 1; /* Valor ocupa el resto del espacio */
+    color: var(--color-dark);
+    word-break: break-word;
+}
+
+/* Botones de acción */
+.enfermeria-actions { /* Renombrado para consistencia */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.export-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-empresa-secondary { /* Volver al listado */
+    background: var(--empresa-secondary); /* Changed from var(--color-gray) to use the correct variable */
+    border: none;
+    color: var(--text-primary); /* Changed to use a dark text color for better contrast on yellow/orange secondary */
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.btn-empresa-secondary:hover {
+    background-color: #e6a700; /* Darker shade of yellow/orange for hover */
+    color: var(--text-primary); /* Keep text color consistent on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-empresa-primary { /* Imprimir (similar al de Historia) */
+    background: linear-gradient(135deg, var(--empresa-primary), var(--empresa-accent)); /* Changed to use --empresa-primary and --empresa-accent directly */
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.btn-empresa-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(155, 44, 44, 0.3);
+    color: white;
+}
+
+.btn-empresa-accent { /* Exportar PDF (similar al de Historia) */
+    background: linear-gradient(135deg, var(--empresa-secondary), #FF8C00); /* Use --empresa-secondary for consistency, #FF8C00 is fine as a darker shade */
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.btn-empresa-accent:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 181, 0, 0.3); /* Adjust shadow to match secondary color */
+    color: white;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .detail-label {
+        flex: 0 0 100%;
+        margin-bottom: 5px;
+        padding-right: 0;
+    }
+    .detail-value {
+        flex: 0 0 100%;
+    }
+}

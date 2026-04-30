@@ -1,0 +1,577 @@
+/* public/css/Proteccion/verDetalleCaso.css */
+
+/* Paleta de colores corporativa */
+:root {
+    --empresa-primary: #9B2C2C;
+    --empresa-primary-light: rgba(155, 44, 44, 0.1);
+    --empresa-secondary: #FFB500;
+    --empresa-secondary-light: rgba(255, 181, 0, 0.1);
+    --empresa-accent: #E53E3E;
+    --empresa-accent-light: rgba(229, 62, 62, 0.1);
+    --text-primary: #2d3748;
+    --text-secondary: #4a5568;
+    --border-color: #e2e8f0;
+    --background-light: #f8fafc;
+    --background-white: #ffffff;
+    --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Estilos para el título principal */
+h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #9b2c2c, #e53e3e);
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(155, 44, 44, 0.3);
+}
+
+/* Ajuste para pantallas más pequeñas si el h1 se vuelve más pequeño */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.2rem;
+        padding: 12px 15px;
+    }
+}
+
+/* Estructura principal */
+.proteccion-header {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumb { /* Si usas breadcrumbs, asegúrate de que estos estilos sean adecuados */
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumb-item a {
+    color: var(--empresa-primary);
+    text-decoration: none;
+}
+
+.breadcrumb-item.active {
+    color: var(--text-secondary);
+}
+
+/* Tarjeta principal */
+.proteccion-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: var(--shadow-medium);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proteccion-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-header.bg-empresa-primary {
+    background: linear-gradient(135deg, var(--empresa-primary), #C53A3A) !important;
+    padding: 20px 25px;
+    border-bottom: none;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.badge.bg-empresa-secondary {
+    background-color: var(--empresa-secondary) !important;
+    color: #212529 !important;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Contenedor de detalles - Ajustado para una sola columna */
+.caso-detail-container {
+    display: block; /* Vuelve a ser un bloque normal */
+    padding: 20px 0;
+}
+
+/* Eliminadas las reglas @media para quick-nav-section */
+/* Remueve toda la sección .quick-nav-section y sus estilos relacionados si existen */
+
+
+/* Acordeones */
+.accordion {
+    --bs-accordion-border-color: var(--border-color);
+    --bs-accordion-border-radius: 10px;
+    --bs-accordion-inner-border-radius: 10px;
+    --bs-accordion-active-bg: var(--empresa-primary-light);
+    --bs-accordion-btn-color: var(--text-primary);
+    --bs-accordion-btn-active-color: var(--empresa-primary);
+}
+
+.accordion-item {
+    border: none; /* Quitamos el borde del item para usar el de detail-section */
+    margin-bottom: 20px; /* Espacio entre items de acordeón */
+}
+
+.accordion-header {
+    margin-bottom: 0;
+}
+
+.accordion-button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 25px; /* Ajusta el padding para que coincida con detail-section */
+    font-size: 1.3rem; /* Tamaño de fuente para el título del acordeón */
+    font-weight: 600;
+    background-color: var(--background-white);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--empresa-primary); /* Mantener el borde lateral */
+    color: var(--text-primary); /* Color de texto por defecto */
+    text-align: left;
+    position: relative; /* Para el icono de chevron */
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--empresa-primary-light);
+    color: var(--empresa-primary);
+    box-shadow: none;
+    border-color: var(--empresa-primary);
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(155, 44, 44, 0.25); /* Sombra de foco */
+    outline: 0;
+}
+
+.accordion-button .section-icon {
+    margin-right: 15px;
+    flex-shrink: 0; /* Evita que el icono se encoja */
+}
+
+.accordion-button .section-title {
+    flex-grow: 1; /* Permite que el título ocupe el espacio restante */
+    margin: 0; /* Quita el margen inferior del título dentro del botón */
+    color: inherit; /* Hereda el color del botón */
+}
+
+.accordion-button::after { /* Ocultamos el icono por defecto de Bootstrap */
+    display: none;
+}
+
+.accordion-icon { /* Usamos nuestro propio icono de Feather */
+    margin-left: auto; /* Mueve el icono a la derecha */
+    transition: transform 0.3s ease-in-out;
+}
+
+.accordion-button:not(.collapsed) .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.accordion-collapse {
+    border-top: none; /* Quitamos el borde superior del cuerpo del acordeón */
+}
+
+.accordion-body {
+    padding: 20px 25px 0 25px; /* Ajusta el padding para que el contenido no quede pegado */
+    background-color: var(--background-white);
+    border-radius: 0 0 10px 10px; /* Redondea solo las esquinas inferiores */
+}
+
+/* Originales `detail-section` pero ahora aplicados al `accordion-item` para el card look */
+.detail-section {
+    background-color: var(--background-white);
+    border-radius: 10px; /* Se aplica al accordion-item */
+    box-shadow: var(--shadow-light);
+    /* padding: 25px; Removido, ahora en accordion-button y accordion-body */
+    /* border-left: 4px solid var(--empresa-primary); Removido, ahora en accordion-button */
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.detail-section::before {
+    /* content: ''; Removido */
+    /* position: absolute; Removido */
+    /* top: 0; Removido */
+    /* left: 0; Removido */
+    /* width: 4px; Removido */
+    /* height: 100%; Removido */
+    /* background: var(--empresa-primary); Removido */
+}
+
+.detail-section:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Animación para resaltar secciones */
+@keyframes highlight {
+    0% { box-shadow: 0 0 0 0 rgba(155, 44, 44, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(155, 44, 44, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(155, 44, 44, 0); }
+}
+
+.highlight-section {
+    animation: highlight 2s ease;
+}
+
+/* Títulos de sección - se usan dentro de accordion-button */
+.section-header {
+    /* display: flex; Removido, ahora el accordion-button lo maneja */
+    /* align-items: center; Removido */
+    margin-bottom: 0; /* Asegurar que no haya margen extra si se usa dentro del accordion-body */
+    padding-bottom: 0; /* Asegurar que no haya padding extra */
+    border-bottom: none; /* Quitar borde si se usa dentro del acordeón, el botón ya tiene un separador visual */
+}
+
+.section-icon { /* Usado dentro del accordion-button */
+    background-color: var(--empresa-primary-light);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    color: var(--empresa-primary);
+    font-size: 1.2rem;
+}
+
+.section-title { /* Usado dentro del accordion-button */
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--empresa-primary); /* O color: inherit; para que tome el color del botón */
+    margin: 0;
+}
+
+/* Contenido de detalles */
+.detail-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.detail-group {
+    background-color: var(--background-light);
+    border-radius: 8px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.detail-group:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.detail-row {
+    display: flex;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.detail-label {
+    flex: 0 0 40%;
+    font-weight: 600;
+    color: var(--empresa-primary);
+    padding-right: 15px;
+}
+
+.detail-value {
+    flex: 1;
+    color: var(--text-primary);
+    word-break: break-word;
+}
+
+/* Listas de elementos - Mejorados para ser "Card Grids" */
+.item-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Auto-fit para mejor responsividad */
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.item-list li {
+    background-color: var(--background-white);
+    border-radius: 10px; /* Más redondeado */
+    padding: 25px; /* Más padding */
+    box-shadow: var(--shadow-light);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--empresa-secondary); /* Borde lateral como en las secciones principales */
+    display: flex; /* Para mejor control del contenido */
+    flex-direction: column; /* Organiza el contenido en columna */
+    justify-content: space-between; /* Empuja el botón al final */
+}
+
+.item-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+    border-left-color: var(--empresa-primary); /* Cambia de color al hacer hover */
+}
+
+.sub-section-title {
+    font-size: 1.1rem; /* Un poco más grande */
+    font-weight: 700; /* Más negrita */
+    color: var(--empresa-primary);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Estilos para el botón de "Ver Detalles" dentro de la tarjeta de lista */
+.btn-view-details {
+    margin-top: 20px; /* Espacio superior */
+    align-self: flex-end; /* Alinea a la derecha dentro de la tarjeta */
+    background-color: var(--empresa-secondary);
+    color: var(--text-primary);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-view-details:hover {
+    background-color: var(--empresa-primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Tablas - Aunque los reemplazaremos por cards, mantengo los estilos */
+.section-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: var(--background-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+}
+
+.section-table th {
+    background: linear-gradient(135deg, var(--empresa-primary), #C53A3A);
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.section-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.section-table tr:last-child td {
+    border-bottom: none;
+}
+
+.section-table tr:hover {
+    background-color: var(--empresa-primary-light);
+}
+
+/* Mensajes sin datos */
+.no-data-message {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--background-light);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin: 20px 0;
+}
+
+/* Botones de acción */
+.proteccion-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.export-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-empresa-primary {
+    background: linear-gradient(135deg, var(--empresa-primary), #C53A3A);
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.btn-empresa-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(155, 44, 44, 0.3);
+    color: white;
+}
+
+.btn-empresa-secondary {
+    background: var(--empresa-secondary);
+    border: none;
+    color: #212529;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.btn-empresa-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 181, 0, 0.3);
+    color: #212529;
+}
+
+.btn-empresa-accent {
+    background: var(--empresa-accent);
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.btn-empresa-accent:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(229, 62, 62, 0.3);
+    color: white;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.detail-section {
+    animation: fadeInUp 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+/* La animación de delay se aplica a los accordion-item en lugar de detail-section */
+.accordion-item:nth-child(1) .detail-section { animation-delay: 0.1s; }
+.accordion-item:nth-child(2) .detail-section { animation-delay: 0.2s; }
+.accordion-item:nth-child(3) .detail-section { animation-delay: 0.3s; }
+.accordion-item:nth-child(4) .detail-section { animation-delay: 0.4s; }
+.accordion-item:nth-child(5) .detail-section { animation-delay: 0.5s; }
+.accordion-item:nth-child(6) .detail-section { animation-delay: 0.6s; }
+.accordion-item:nth-child(7) .detail-section { animation-delay: 0.7s; }
+.accordion-item:nth-child(8) .detail-section { animation-delay: 0.8s; }
+.accordion-item:nth-child(9) .detail-section { animation-delay: 0.9s; }
+
+
+/* Responsividad */
+@media (max-width: 992px) {
+    .detail-content {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .item-list {
+        grid-template-columns: 1fr; /* Una columna para las listas de ítems en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 768px) {
+    .proteccion-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .export-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .detail-row {
+        flex-direction: column;
+    }
+    
+    .detail-label {
+        flex: 0 0 100%;
+        margin-bottom: 8px;
+    }
+    
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .card-options {
+        align-self: flex-start;
+    }
+}
+
+@media (max-width: 576px) {
+    .detail-group {
+        padding: 15px;
+    }
+    
+    .section-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .export-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn-empresa-primary,
+    .btn-empresa-secondary,
+    .btn-empresa-accent {
+        width: 100%;
+        justify-content: center;
+    }
+}

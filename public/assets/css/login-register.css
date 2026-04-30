@@ -1,0 +1,142 @@
+/* login-register.css */
+
+/* Fuentes y estilos generales del cuerpo */
+body {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5; /* Fondo suave */
+    margin: 0;
+    padding: 1rem; /* Pequeño padding para móviles */
+    box-sizing: border-box; /* Incluye padding y borde en el tamaño total */
+}
+
+/* Contenedor principal del formulario */
+.form-container {
+    background-color: #ffffff;
+    padding: 2.5rem; /* Espaciado interno */
+    border-radius: 0.75rem; /* Bordes redondeados */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Sombra suave */
+    width: 100%;
+    max-width: 450px; /* Ancho máximo para el formulario */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos hijos (logo, título, formulario) */
+}
+
+/* Estilo para el logo de la empresa */
+.company-logo {
+    width: 240px; /* Tamaño del logo */
+    height: 240px;
+    object-fit: contain; /* Asegura que la imagen se ajuste sin distorsionarse */
+    margin-bottom: 0.1rem; /* Espacio debajo del logo */
+    /* border-radius: 50%; Opcional: para un logo circular */
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+/* Títulos de los formularios */
+.form-title {
+    font-size: 1.875rem; /* text-3xl */
+    font-weight: 700; /* font-bold */
+    color: #1f2937; /* text-gray-900 */
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Grupos de formulario (label + input) */
+.form-group {
+    margin-bottom: 1rem; /* Espacio entre grupos de campos */
+    width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+.form-group label {
+    font-weight: 600; /* Semibold */
+    color: #4b5563; /* text-gray-700 */
+    margin-bottom: 0.5rem;
+    display: block; /* Para que la etiqueta esté en su propia línea */
+    font-size: 0.9rem;
+}
+
+/* Estilo para los campos de entrada y select */
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #374151; /* text-gray-800 */
+    background-color: #f9fafb; /* Fondo ligeramente gris para inputs */
+    border: 1px solid #d1d5db; /* border-gray-300 */
+    border-radius: 0.5rem; /* rounded-lg */
+    transition: all 0.2s ease-in-out; /* Transición suave para focus */
+    box-sizing: border-box; /* Asegura que padding y borde no aumenten el ancho */
+}
+
+.form-control:focus {
+    border-color: #2563eb; /* border-blue-600 */
+    outline: none; /* Elimina el contorno por defecto */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5); /* ring-blue-500/50 */
+    background-color: #ffffff; /* Fondo blanco al enfocar */
+}
+
+/* Estilo para los botones */
+.btn {
+    display: block; /* Ocupa todo el ancho */
+    width: 100%;
+    font-weight: 700; /* font-bold */
+    color: #ffffff;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    padding: 0.875rem 1.5rem; /* py-3.5 px-6 */
+    font-size: 1.125rem; /* text-lg */
+    border-radius: 0.75rem; /* rounded-xl */
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    border: none; /* Elimina el borde por defecto */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Sombra */
+}
+
+.btn-primary {
+    background-color: #3b82f6; /* bg-blue-500 */
+}
+
+.btn-primary:hover {
+    background-color: #2563eb; /* bg-blue-600 */
+    box-shadow: 0 6px 8px -2px rgba(0, 0, 0, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.08);
+}
+
+.btn-success {
+    background-color: #10b981; /* bg-emerald-500 */
+}
+
+.btn-success:hover {
+    background-color: #059669; /* bg-emerald-600 */
+    box-shadow: 0 6px 8px -2px rgba(0, 0, 0, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.08);
+}
+
+/* Estilo para los enlaces "Ya tienes cuenta" / "¿No tienes cuenta?" */
+.link-text {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #6b7280; /* text-gray-500 */
+    font-size: 0.9rem;
+}
+
+.link-text a {
+    color: #2563eb; /* text-blue-600 */
+    font-weight: 600; /* font-semibold */
+    text-decoration: none; /* Sin subrayado por defecto */
+}
+
+.link-text a:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
+/* Utilidades de espaciado */
+.mt-3 { margin-top: 0.75rem; }
+.mt-4 { margin-top: 1rem; }
+.mt-5 { margin-top: 1.25rem; }
+.mb-4 { margin-bottom: 1rem; }

@@ -1,0 +1,320 @@
+/* CSS corregido para anexos3.css */
+/* Eliminando selectores que no coinciden con la estructura HTML */
+
+/* Estilos para el título principal */
+h4 {
+    font-size: 1.4rem !important;
+    font-weight: 700 !important;
+    color: white !important;
+    margin-bottom: 20px !important;
+    padding: 15px 20px !important;
+    background: linear-gradient(135deg, #9b2c2c, #e53e3e) !important;
+    border-radius: 8px !important;
+    text-align: center !important;
+    box-shadow: 0 2px 8px rgba(155, 44, 44, 0.3) !important;
+    border: none !important;
+}
+
+/* Container principal de anexos */
+#anexos3-container {
+    margin-bottom: 25px !important;
+    padding: 30px !important;
+    background-color: #ffffff !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Estilos para cada grupo de anexo (persona natural) */
+.anexo3-group {
+    background-color: #f8f9fa !important;
+    border: 2px solid #e2e8f0 !important;
+    border-radius: 12px !important;
+    padding: 25px !important;
+    margin-bottom: 20px !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05) !important;
+    transition: all 0.3s ease !important;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 20px !important;
+}
+
+.anexo3-group:hover {
+    border-color: #9b2c2c !important;
+    box-shadow: 0 4px 15px rgba(155, 44, 44, 0.1) !important;
+}
+
+/* Título de cada grupo (Persona Natural) */
+.anexo3-group h5 {
+    grid-column: 1 / -1 !important;
+    color: #9b2c2c !important;
+    font-weight: 700 !important;
+    font-size: 1.2rem !important;
+    margin-bottom: 20px !important;
+    padding-bottom: 10px !important;
+    border-bottom: 2px solid #e2e8f0 !important;
+    text-align: center !important;
+}
+
+/* Estilos para cada grupo de label e input/select dentro de anexos */
+.anexo3-group > div {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    margin-bottom: 0 !important;
+}
+
+/* Estilos para las etiquetas (labels) */
+.anexo3-group label {
+    font-weight: 600 !important;
+    color: #4a5568 !important;
+    font-size: 0.95rem !important;
+    margin-bottom: 5px !important;
+}
+
+/* Estilos para los campos de entrada */
+.anexo3-group input[type="text"],
+.anexo3-group input[type="number"],
+.anexo3-group select {
+    width: 100% !important;
+    padding: 12px 15px !important;
+    border: 1px solid #cbd5e0 !important;
+    border-radius: 8px !important;
+    font-size: 1rem !important;
+    color: #2d3748 !important;
+    background-color: #ffffff !important;
+    transition: all 0.3s ease !important;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+    height: auto !important;
+    line-height: normal !important;
+}
+
+/* Estados de focus para los campos */
+.anexo3-group input:focus,
+.anexo3-group select:focus {
+    border-color: #9b2c2c !important;
+    box-shadow: 0 0 0 3px rgba(155, 44, 44, 0.2) !important;
+    outline: none !important;
+    background-color: #ffffff !important;
+}
+
+/* Estilos específicos para select */
+.anexo3-group select {
+    cursor: pointer !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e") !important;
+    background-position: right 12px center !important;
+    background-repeat: no-repeat !important;
+    background-size: 16px !important;
+    padding-right: 40px !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+}
+
+.anexo3-group select option {
+    padding: 8px !important;
+    background-color: #ffffff !important;
+    color: #2d3748 !important;
+}
+
+/* Botón para agregar persona */
+button[onclick="agregarAnexo3()"] {
+    background: linear-gradient(135deg, #38a169, #48bb78) !important;
+    color: white !important;
+    padding: 12px 25px !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 8px rgba(56, 161, 105, 0.2) !important;
+    margin-bottom: 25px !important;
+    text-decoration: none !important;
+}
+
+button[onclick="agregarAnexo3()"]:hover {
+    background: linear-gradient(135deg, #48bb78, #38a169) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(56, 161, 105, 0.3) !important;
+}
+
+/* Contenedor de navegación */
+div[style*="justify-content: space-between"] {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding-top: 20px !important;
+    border-top: 1px solid #edf2f7 !important;
+    gap: 15px !important;
+    margin-top: 20px !important;
+}
+
+/* Estilos para botones de navegación */
+button[onclick="backTab()"],
+button[onclick="nextTab()"] {
+    padding: 12px 25px !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    text-decoration: none !important;
+}
+
+/* Botón anterior */
+button[onclick="backTab()"] {
+    background: linear-gradient(135deg, #718096, #a0aec0) !important;
+    color: white !important;
+}
+
+button[onclick="backTab()"]:hover {
+    background: linear-gradient(135deg, #a0aec0, #718096) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Botón siguiente */
+button[onclick="nextTab()"] {
+    background: linear-gradient(135deg, #9b2c2c, #e53e3e) !important;
+    color: white !important;
+}
+
+button[onclick="nextTab()"]:hover {
+    background: linear-gradient(135deg, #e53e3e, #9b2c2c) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Estilos especiales para campos específicos */
+input[name*="[edad]"] {
+    max-width: 120px !important;
+}
+
+input[name*="[ci]"] {
+    max-width: 200px !important;
+}
+
+input[name*="[telefono]"] {
+    max-width: 200px !important;
+}
+
+/* Override específico para clases de Bootstrap que puedan interferir */
+.anexo3-group .form-control {
+    padding: 12px 15px !important;
+    border: 1px solid #cbd5e0 !important;
+    border-radius: 8px !important;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+}
+
+.anexo3-group .form-control:focus {
+    border-color: #9b2c2c !important;
+    box-shadow: 0 0 0 3px rgba(155, 44, 44, 0.2) !important;
+}
+
+.btn {
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    #anexos3-container {
+        padding: 20px !important;
+    }
+
+    .anexo3-group {
+        grid-template-columns: 1fr !important;
+        padding: 20px !important;
+        gap: 15px !important;
+    }
+
+    div[style*="justify-content: space-between"] {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 10px !important;
+    }
+
+    button {
+        width: 100% !important;
+    }
+
+    /* Campos específicos ocupan todo el ancho en móvil */
+    input[name*="[edad]"],
+    input[name*="[ci]"],
+    input[name*="[telefono]"] {
+        max-width: 100% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #anexos3-container {
+        padding: 15px !important;
+    }
+
+    .anexo3-group {
+        padding: 15px !important;
+        gap: 12px !important;
+    }
+
+    .anexo3-group h5 {
+        font-size: 1.1rem !important;
+        margin-bottom: 15px !important;
+    }
+
+    .anexo3-group input,
+    .anexo3-group select {
+        padding: 10px 12px !important;
+        font-size: 0.95rem !important;
+    }
+
+    .anexo3-group select {
+        padding-right: 35px !important;
+        background-size: 14px !important;
+    }
+}
+
+/* Reglas adicionales para asegurar que los estilos se apliquen */
+* {
+    box-sizing: border-box !important;
+}
+
+/* Override específico para elementos de Bootstrap Grid */
+.row,
+.col,
+.col-* {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Asegurar que los elementos flex funcionen correctamente */
+.d-flex {
+    display: flex !important;
+}
+
+.justify-content-between {
+    justify-content: space-between !important;
+}
+.botonEliminarAnexo3{
+    background: linear-gradient(135deg, #e53e3e, #c53030) !important;
+    color: white !important;
+    width: 200px;
+    height: 45px;
+    border: none !important;
+    border-radius: 6px !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 6px rgba(229, 62, 62, 0.2) !important;
+    margin-top: 38px !important;
+    margin-left: 90px;
+    text-decoration: none !important;
+}
+.botonEliminarAnexo3::hover{
+    background: linear-gradient(135deg, #c53030, #e53e3e) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 10px rgba(229, 62, 62, 0.3) !important;
+}

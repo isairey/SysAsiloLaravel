@@ -1,0 +1,170 @@
+/* Estilos específicos para la vista de Adultos Mayores */
+
+/* Estilo para la tarjeta de estadísticas personalizada */
+.card-header{
+    background-color: #FFB500;
+}
+
+.buscador{
+    padding-top: 30px;
+    width: 100%;
+    padding-left: 30px;
+}
+.card-adultos-stat {
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+}
+.card-body{
+    margin-top: -10px;
+}
+.card-adultos-stat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-adultos-stat .card-body {
+    padding: 20px;
+}
+
+.card-adultos-stat .stat-icon {
+    font-size: 2.5rem;
+    opacity: 0.3;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.card-adultos-stat .stat-title {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+
+.card-adultos-stat .stat-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* Estilos específicos para la tabla */
+#adultosTable {
+    width: 100% !important;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+#adultosTable th,
+#adultosTable td {
+    padding: 12px 15px;
+    border: 1px solid #e9ecef;
+    vertical-align: middle;
+}
+
+#adultosTable thead th {
+    background-color: #f2f4f7;
+    color: #495057;
+    font-weight: 600;
+    text-align: left;
+}
+
+#adultosTable tbody tr:nth-child(even) {
+    background-color: #fdfdfd;
+}
+
+#adultosTable tbody tr:hover {
+    background-color: #e6f7ff;
+}
+
+/* Estilos para los botones de acción */
+.btn-group .btn {
+    margin-right: 5px;
+    border-radius: 5px;
+    font-size: 0.85em;
+    padding: 6px 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-group .btn i {
+    margin-right: 0; /* Eliminamos el margen derecho para iconos */
+}
+
+/* Estilos para el estado del adulto mayor (si lo agregas después) */
+.badge-estado {
+    padding: 0.4em 0.7em;
+    border-radius: 0.25rem;
+    font-size: 0.75em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.badge-activo {
+    background-color: #28a745 !important;
+    color: #fff;
+}
+
+.badge-inactivo {
+    background-color: #dc3545 !important;
+    color: #fff;
+}
+
+/* Responsividad adicional */
+@media (max-width: 768px) {
+    .card-adultos-stat .stat-value {
+        font-size: 1.5rem;
+    }
+    
+    #adultosTable {
+        font-size: 0.9em;
+    }
+    
+    .btn-group .btn {
+        padding: 5px 8px;
+        font-size: 0.8em;
+    }
+}
+/* Estilos para el buscador */
+#busquedaInput {
+    border-left: none;
+    padding-left: 5px;
+}
+
+.input-group-text {
+    background-color: #6a11cb;
+    border-right: none;
+}
+
+.input-group-text i {
+    color: white;
+}
+
+#limpiarBusqueda {
+    border-left: none;
+}
+
+/* Ajustar el ancho del input de búsqueda */
+.form-control {
+    min-width: 250px;
+}
+
+/* Efecto hover para el botón limpiar */
+#limpiarBusqueda:hover {
+    background-color: #f8f9fa;
+}
+
+/* Estilos para el texto de ayuda */
+.text-muted {
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: block;
+}
+
+
+div.dataTables_filter {
+    display: none;
+}
+

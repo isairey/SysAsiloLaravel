@@ -1,0 +1,342 @@
+/* public/css/Medico/main-historia-clinica.css */
+
+/* Variables CSS para consistencia de colores y sombras */
+:root {
+    --color-primary: #007bff; /* Azul para "Historia Clínica" */
+    --color-secondary: #17a2b8; /* Cyan para "Anterior" */
+    --color-accent: #28a745; /* Verde para "Exámenes Complementarios" y "Guardar" */
+    --color-light: #F8F9FA;
+    --color-gray: #6C757D; /* Gris para "Cancelar" */
+    --color-dark: #343A40;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+body {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para el título principal de la página (H1) */
+.page-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #9b2c2c, #e53e3e);;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Contenedor principal del formulario de Historia Clínica */
+/* Ajustes para el .card para que el contenido de los tabs quede mejor */
+.main-container .card-body {
+    padding: 20px; /* Padding general para el contenido del card */
+}
+
+.card-header {
+    background-color: #f2f2f2;
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    border-radius: 8px 8px 0 0;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.card-body > .row {
+    padding: 15px 0;
+}
+
+.card-body > .row > div {
+    margin-bottom: 10px;
+}
+
+.card-body strong {
+    color: #4a5568;
+}
+
+/* Estilos para tabs (Adaptados de RegistrarCaso.css) */
+ul#formTabs {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 5px;
+    padding: 0;
+    margin: 0 0 20px 0;
+    border-bottom: none;
+    background: var(--color-light);
+    border-radius: 12px;
+    padding: 8px;
+    box-shadow: var(--shadow-sm);
+}
+
+.tab-link {
+    padding: 12px 20px;
+    background: white;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--color-gray);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 0.9rem;
+    position: relative;
+    overflow: hidden;
+    display: block;
+}
+
+.tab-link:hover {
+    background: linear-gradient(135deg, #9b2c2c, #e53e3e);;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.tab-link.active {
+    background: linear-gradient(135deg, #9b2c2c, #e53e3e);;
+    color: white;
+    font-weight: 600;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.tab-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--color-accent); /* Barra inferior activa usa el color de acento */
+    border-radius: 2px;
+}
+
+.tab-link.disabled {
+    background-color: #f8f9fa;
+    color: #b0b0b0;
+    cursor: not-allowed;
+    opacity: 0.7;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Contenido de tabs */
+.tab-content {
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    margin-bottom: 20px;
+    min-height: 400px; /* Asegura un alto mínimo para el contenido del tab */
+}
+
+.tab-pane {
+    display: none;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    position: relative;
+}
+
+.tab-pane.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para los campos de formulario (sin Bootstrap) */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.full-width-input,
+.table-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    color: #2d3748;
+    background-color: #f7fafc;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+textarea.full-width-input {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.form-static-value {
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    background-color: #edf2f7;
+    border-radius: 6px;
+    color: #4a5568;
+    font-size: 1rem;
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+}
+
+.form-grid-2-col, .form-grid-3-col {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+.form-grid-2-col {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.form-grid-3-col {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Efecto de enfoque para inputs/textareas */
+.full-width-input:focus,
+.table-input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+    outline: none;
+    background-color: #ffffff;
+}
+
+/* Estilos de botones (Adaptados de RegistrarCaso.css) */
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary { /* Botón Siguiente */
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+}
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+}
+
+.btn-success { /* Botón Guardar y Finalizar */
+    background-color: var(--color-accent);
+    color: white;
+}
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.btn-info { /* Botón Anterior */
+    background-color: var(--color-secondary);
+    color: white;
+}
+.btn-info:hover {
+    background-color: #138496;
+}
+
+.btn-secondary { /* Botón Cancelar */
+    background-color: var(--color-gray);
+    color: white;
+}
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Mensajes de alerta personalizados */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+.alert-warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+
+/* Utilidades de espaciado */
+.text-center {
+    text-align: center;
+}
+.ms-2 {
+    margin-left: 0.5rem;
+}
+.mt-4 {
+    margin-top: 1.5rem;
+}
+
+
+/* Media Queries para Responsividad General */
+@media (max-width: 768px) {
+    ul#formTabs {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .tab-link {
+        text-align: center;
+        padding: 15px;
+    }
+    .tab-pane {
+        padding: 20px;
+    }
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .btn + .btn {
+        margin-left: 0;
+    }
+}

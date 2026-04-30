@@ -1,0 +1,283 @@
+/* public/css/Medico/indexReportes.css */
+
+/* Paleta de colores consistente con otros archivos */
+:root {
+    --color-primary: #9B2C2C; /* Rojo oscuro */
+    --color-secondary: #FFB500; /* Amarillo/Naranja */
+    --color-accent: #E53E3E; /* Rojo */
+    --color-light: #F8F9FA;
+    --color-gray: #6C757D;
+    --color-dark: #343A40;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 8px 15px rgba(0,0,0,0.1);
+
+    --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, #C53A3A 100%); /* Primary to darker red */
+    --gradient-success: linear-gradient(135deg, #28a745 0%, #20c997 100%); /* Green */
+    --gradient-info: linear-gradient(135deg, #17a2b8 0%, #138496 100%); /* Blue-cyan */
+    --gradient-danger: linear-gradient(135deg, #dc3545 0%, #c82333 100%); /* Red */
+}
+
+body {
+    background: linear-gradient(135deg, var(--color-light) 0%, #e9ecef 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado de la página */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.page-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: 0;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(155, 44, 44, 0.3);
+}
+
+.breadcrumb {
+    background-color: transparent;
+    padding: 0;
+    margin-bottom: 0;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+    display: inline-block;
+    padding-right: 0.5rem;
+    color: var(--color-gray);
+    content: "/";
+}
+
+/* Tarjetas de estadísticas */
+.card-report-stat { /* Renombrado para este módulo */
+    border-radius: 10px;
+    margin-bottom: 20px;
+    color: white;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card-report-stat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-report-stat .card-body {
+    padding: 20px;
+}
+
+.card-report-stat .card-text {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.card-report-stat .num-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+.card-report-stat .counter-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Gradientes para las tarjetas */
+.bg-primary-gradient { background: var(--gradient-primary); }
+.bg-success-gradient { background: var(--gradient-success); }
+.bg-info-gradient { background: var(--gradient-info); }
+.bg-danger-gradient { background: var(--gradient-danger); }
+
+/* Sombras específicas para los iconos de las tarjetas */
+.box-shadow-primary { box-shadow: 0 4px 10px rgba(155, 44, 44, 0.3); } /* Usando color-primary */
+.box-shadow-success { box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3); }
+.box-shadow-info { box-shadow: 0 4px 10px rgba(23, 162, 184, 0.3); }
+
+
+/* Contenedor principal de la tabla */
+.card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+}
+
+.card-header {
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #e0e0e0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 15px 20px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Filtros */
+.form-filter {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: var(--color-light);
+    box-shadow: var(--shadow-sm);
+}
+
+.form-filter .form-label {
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 5px;
+}
+
+.form-filter .form-control,
+.form-filter .form-select {
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+    padding: 0.375rem 0.75rem;
+}
+
+.form-filter .input-group .btn {
+    border-radius: 0.25rem;
+}
+
+/* Tabla */
+#reportesTable {
+    width: 100% !important;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+#reportesTable th,
+#reportesTable td {
+    padding: 12px 15px;
+    border: 1px solid #e9ecef;
+    vertical-align: middle;
+}
+
+#reportesTable thead th {
+    background-color: #f2f4f7;
+    color: #495057;
+    font-weight: 600;
+    text-align: left;
+}
+
+#reportesTable tbody tr:nth-child(even) {
+    background-color: #fdfdfd;
+}
+
+#reportesTable tbody tr:hover {
+    background-color: #e6f7ff;
+}
+
+/* Estilos para los botones de acción */
+.btn-group .btn {
+    margin-right: 5px;
+    border-radius: 5px;
+    font-size: 0.85em;
+    padding: 6px 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-group .btn i {
+    margin-right: 0;
+}
+
+/* Paginación */
+.pagination {
+    justify-content: center;
+    margin-top: 20px;
+}
+.pagination .page-item .page-link {
+    border-radius: 5px;
+    margin: 0 3px;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+.pagination .page-item.active .page-link {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+}
+.pagination .page-item.disabled .page-link {
+    color: var(--color-gray);
+    pointer-events: none;
+    background-color: var(--color-light);
+    border-color: #dee2e6;
+}
+
+/* Botones de DataTables (Exportar) */
+.dt-buttons {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end; /* Alinea los botones a la derecha */
+}
+
+.dt-buttons .btn {
+    padding: 0.6rem 1.2rem; /* Ajustar padding para los botones de exportación */
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .page-title {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 15px;
+    }
+    .breadcrumb {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    .form-filter .row > div {
+        margin-bottom: 15px;
+    }
+    .form-filter .input-group {
+        flex-wrap: wrap;
+    }
+    .form-filter .input-group .form-control {
+        flex-basis: 100%;
+        margin-bottom: 10px;
+    }
+    .form-filter .input-group .btn {
+        flex-grow: 1;
+    }
+    .dt-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .dt-buttons .btn {
+        width: 100%;
+    }
+}

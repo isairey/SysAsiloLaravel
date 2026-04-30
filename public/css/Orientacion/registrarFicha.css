@@ -1,0 +1,341 @@
+/* public/css/Orientacion/registrarFicha.css - Estilos para el formulario de registro de ficha de orientación */
+
+/* Definición de variables de color y sombra para consistencia corporativa */
+:root {
+    --color-primary: #9B2C2C;
+    --color-secondary: #FFB500;
+    --color-accent: #E53E3E;
+    --color-light: #F8F9FA;
+    --color-gray: #6C757D;
+    --color-dark: #343A40;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+/* Estilos para el cuerpo (fondo general) */
+body {
+    background: linear-gradient(135deg, var(--color-light) 0%, #e9ecef 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para el contenedor principal del formulario */
+.container1 {
+    margin-left: 250px; /* Espacio para el sidebar */
+    transition: margin-left 0.3s ease;
+    padding: 20px;
+    background: white;
+    border-radius: 15px 0 0 0;
+    box-shadow: var(--shadow-lg);
+    min-height: auto; /* Ajusta la altura automáticamente según el contenido */
+    animation: slideIn 0.5s ease-out; /* Animación de entrada */
+}
+
+/* Responsivo para cuando el sidebar se colapsa */
+@media (max-width: 1200px) {
+    .container1 {
+        margin-left: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container1 {
+        margin-left: 0;
+        padding: 15px;
+        border-radius: 0;
+    }
+}
+
+/* Estilos para el título principal (FICHA DE ORIENTACIÓN / Registrar Ficha de Orientación para...) */
+h6 {
+    font-size: 1.4rem; /* Tamaño de fuente más grande para el título principal */
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(155, 44, 44, 0.3);
+}
+
+/* Estilos para los subtítulos dentro del formulario (DATOS DE IDENTIFICACIÓN, ORIENTACIÓN) */
+.form-section h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-top: 25px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--color-secondary); /* Línea inferior de acento */
+}
+
+/* Estilos para la sección del formulario que contendrá los campos */
+.form-section {
+    background-color: #ffffff;
+    padding: 30px; /* Mayor padding para un look más limpio */
+    border-radius: 12px; /* Más redondeado */
+    box-shadow: var(--shadow-md); /* Sombra consistente */
+    margin-top: 20px;
+}
+
+/* Estilos para cada grupo de label e input/select */
+.form-group {
+    margin-bottom: 15px; /* Espacio entre grupos de formulario */
+}
+
+/* Estilos para etiquetas (labels) */
+.form-group label1 {
+    font-weight: 600;
+    color: var(--color-dark);
+    font-size: 0.95rem;
+    display: block; /* Asegura que la etiqueta esté en su propia línea */
+    margin-bottom: 8px; /* Espacio debajo de la etiqueta */
+}
+
+/* Estilos para campos de entrada, textarea y select */
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group textarea,
+.form-group .read-only-field {
+    width: 100%; /* Ocupa el 100% del ancho de su columna de Bootstrap */
+    padding: 12px 15px;
+    border: 1px solid #cbd5e0; /* Un borde suave */
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #2d3748; /* Color de texto para los inputs */
+    background-color: #f7fafc; /* Fondo ligeramente gris para los inputs */
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box; /* Asegura que padding no aumente el tamaño total */
+}
+
+/* Estilo específico para campos de solo lectura */
+.form-group .read-only-field {
+    background-color: #ebf1f6; /* Un gris más claro para lectura */
+    border: 1px solid #c2d9e0;
+    color: #495057;
+    cursor: default; /* Indica que no es editable */
+}
+
+/* Estilos al enfocar inputs */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--color-primary); /* Color primario al enfocar */
+    box-shadow: 0 0 0 3px rgba(155, 44, 44, 0.2); /* Sutil resplandor */
+    outline: none;
+    background-color: #ffffff;
+}
+
+/* Estilos para el grupo de radio buttons */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    gap: 8px; /* Espacio entre los radio buttons */
+}
+.radio-group div {
+    display: flex;
+    align-items: center;
+}
+.radio-group input[type="radio"] {
+    /* Ocultar el radio button por defecto del navegador */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Estilos personalizados */
+    width: 20px; /* Tamaño del círculo exterior */
+    height: 20px; /* Tamaño del círculo exterior */
+    border: 2px solid var(--color-gray); /* Borde del círculo exterior */
+    border-radius: 50%; /* Hacerlo circular */
+    outline: none;
+    cursor: pointer;
+    position: relative; /* Para el círculo interior */
+    flex-shrink: 0; /* Prevenir que se encoja en un contenedor flex */
+    margin-right: 8px; /* Espacio entre el radio y la etiqueta */
+    transition: all 0.2s ease;
+}
+
+.radio-group input[type="radio"]:checked {
+    border-color: var(--color-primary); /* Color del borde cuando está seleccionado */
+    background-color: var(--color-primary); /* Fondo del círculo exterior cuando está seleccionado */
+}
+
+.radio-group input[type="radio"]:checked::before {
+    content: '';
+    display: block;
+    width: 10px; /* Tamaño del círculo interior */
+    height: 10px; /* Tamaño del círculo interior */
+    background-color: white; /* Color del círculo interior */
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.radio-group input[type="radio"]:focus {
+    box-shadow: 0 0 0 3px rgba(155, 44, 44, 0.2); /* Anillo de enfoque */
+}
+
+.radio-group label1 {
+    font-weight: normal;
+    margin-bottom: 0; /* Elimina margen inferior de la etiqueta del radio button */
+}
+
+/* Mensajes de éxito y error */
+.alert-success, .general-error-container1 {
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+    font-size: 0.95rem;
+}
+.alert-success {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    border-left: 4px solid #155724;
+}
+.general-error-container1 {
+    background: linear-gradient(135deg, var(--color-accent), #dc3545);
+    color: white;
+    border-left: 4px solid #721c24;
+}
+.general-error-container1 ul {
+    margin: 0;
+    padding-left: 20px;
+}
+.general-error-container1 h6 {
+    text-align: left;
+    background: none;
+    color: white;
+    padding: 0;
+    margin-bottom: 10px;
+    box-shadow: none;
+    border-bottom: none;
+    font-size: 1.1rem;
+}
+.error-message { /* Estilo para errores de validación individuales bajo los campos */
+    color: #ff4d4d; /* Rojo más vibrante para errores */
+    font-size: 0.85em;
+    margin-top: 5px;
+    display: block;
+}
+.is-invalid {
+    border-color: #ff4d4d !important;
+}
+
+/* Botones de navegación (Volver y Guardar) */
+.navigation-buttons {
+    width: 100%; /* Asegura que ocupe todo el ancho de su contenedor */
+    display: flex;
+    justify-content: flex-end; /* Alinea los botones a la derecha */
+    gap: 15px; /* Espacio entre botones */
+    padding-top: 20px;
+    border-top: 1px solid #edf2f7;
+    margin-top: 30px; /* Más espacio arriba */
+}
+.navigation-buttons1 {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-top: 1px solid #eee;
+}
+
+.navigation-buttons a.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none; /* Para los enlaces que parecen botones */
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--color-gray); /* Gris para "Volver" */
+    color: white;
+}
+.navigation-buttons1 a.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none; /* Para los enlaces que parecen botones */
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--color-gray); /* Gris para "Volver" */
+    color: white;
+}
+.navigation-buttons a.btn:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.navigation-buttons1 a.btn:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.navigation-buttons button.btn-primary {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: inline-flex;
+    align-items: center;
+    /* ESTILOS ESPECÍFICOS PARA EL BOTÓN "GUARDAR FICHA" */
+    background: linear-gradient(135deg, #9b2c2c, #e53e3e) !important;
+    color: white !important;
+    width: 200px; /* Ancho específico */
+}
+
+.navigation-buttons button.btn-primary:hover {
+    /* ESTILOS HOVER ESPECÍFICOS PARA EL BOTÓN "GUARDAR FICHA" */
+    background: linear-gradient(135deg, #e53e3e, #9b2c2c) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 200px; /* Mantener el ancho en hover */
+}
+
+/* Iconos dentro de botones */
+.navigation-buttons i {
+    margin-right: 8px; /* Espacio entre icono y texto */
+}
+
+/* Estilo para el párrafo de advertencia */
+.text-muted {
+    font-size: 0.9rem;
+    color: var(--color-gray) !important; /* Asegura el color del texto */
+    margin-top: 25px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* Animación de entrada para el contenedor */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
